@@ -1,0 +1,13 @@
+@mixin font-main {
+  font-family: "paralucent-stencil",sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  @content;
+}
+
+@mixin background-image($position: center, $size: cover, $repeat: no-repeat) {
+  background-position: $position;
+  background-size: $size;
+  background-repeat: $repeat;
+  @content;
+}

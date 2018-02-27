@@ -1,0 +1,113 @@
+.navbar-toggler {
+  display: block;
+
+  display: relative;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+
+  span {
+
+  }
+
+
+  @media (min-width: $break) {
+    display: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  z-index: 10;
+}
+
+.cdr-brand {
+  @media (max-width: $break - 1 ) {
+    position: relative;
+    z-index: 10;
+    width: 300px;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.cdr-nav {
+  flex: 1 auto;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+
+  @media (max-width: $break - 1) {
+
+    transform: translateY(-100%);
+    transition: all .3s ease-in-out;
+
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    padding-top: 70px;
+
+    .admin-bar & {
+      height: calc(100vh - 46px);
+    }
+
+    @include background-image(top left, auto, repeat);
+    background-color: $green-menu;
+    background-image: url(../img/mobile-menu-texture.svg);
+
+    * {
+      color: white;
+    }
+
+    .support-wrapper {
+      margin-top: 3rem;
+      flex: 0 0 60px;
+      width: 180px;
+      height: 60px;
+      order: 1;
+      position: relative;
+      a, svg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      span {
+        left: 0;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 2.8rem;
+        line-height: 58px;
+        margin:0;
+        color: white;
+      }
+    }
+    .cdr-menu {
+      order: 2;
+      flex: 0 auto;
+      margin-top: 2rem;
+      .menu-item {
+        flex: 0 0 100%;
+        a {
+          font-size: 3rem;
+          padding: 1.6rem 0;
+        }
+      }
+    }
+
+  }
+
+}

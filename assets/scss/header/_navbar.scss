@@ -1,0 +1,96 @@
+.cdr-navbar {
+
+
+
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.8rem;
+
+
+  @media (min-width: $break) {
+    padding: 1.5rem 3rem;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+
+  .cdr-brand {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    @media (min-width: $break) {
+      #logoLight {
+        display: none;
+      }
+    }
+  }
+
+
+
+  .cdr-menu {
+    flex: 1 1 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    @media (min-width: $break) {
+      flex-direction: row;
+    }
+  }
+
+  .menu-item {
+    a {
+      @include font-main {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+      }
+      display: block;
+      padding: .5rem 1rem;
+    }
+  }
+  .support-wrapper {
+    flex: 1 0 110px;
+    width: 110px;
+    height: 35px;
+    position: relative;
+  }
+  .support-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    svg {
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      top: 0;
+      left: 0;
+    }
+    span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-left: 19px;
+      // margin-bottom: 4px;
+      line-height: 34px;
+      @include font-main {
+        color: $green;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+}
