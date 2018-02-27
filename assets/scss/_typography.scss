@@ -2,13 +2,6 @@ html {
   font-size: 10px;
 }
 
-@mixin font-main {
-  font-family: "paralucent-stencil",sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  @content;
-}
-
 h1 {
   @include font-main {
     font-size: 4.8rem;
@@ -49,4 +42,5 @@ a, p, li {
   font-family: Arial,sans-serif;
   font-size: 18px;
   line-height: 26px;
+  color: $grey;
 }

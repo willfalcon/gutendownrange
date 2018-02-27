@@ -37,6 +37,162 @@ h6 {
 a, p, li {
   font-family: Arial,sans-serif;
   font-size: 18px;
-  line-height: 26px; }
+  line-height: 26px;
+  color: #454545; }
+
+.cdr-navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.8rem; }
+  @media (min-width: 768px) {
+    .cdr-navbar {
+      padding: 1.5rem 3rem;
+      flex-flow: row nowrap;
+      justify-content: flex-start; } }
+  .cdr-navbar .cdr-brand {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap; }
+    @media (min-width: 768px) {
+      .cdr-navbar .cdr-brand #logoLight {
+        display: none; } }
+  .cdr-navbar .cdr-menu {
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none; }
+    @media (min-width: 768px) {
+      .cdr-navbar .cdr-menu {
+        flex-direction: row; } }
+  .cdr-navbar .menu-item a {
+    font-family: "paralucent-stencil",sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    display: block;
+    padding: .5rem 1rem; }
+  .cdr-navbar .support-wrapper {
+    flex: 1 0 110px;
+    width: 110px;
+    height: 35px;
+    position: relative; }
+  .cdr-navbar .support-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .cdr-navbar .support-button svg {
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      top: 0;
+      left: 0; }
+    .cdr-navbar .support-button span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-left: 19px;
+      line-height: 34px;
+      font-family: "paralucent-stencil",sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      color: #478E41;
+      font-size: 1.8rem;
+      text-transform: uppercase; }
+
+.navbar-toggler {
+  display: block;
+  display: relative;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  z-index: 10; }
+  @media (min-width: 768px) {
+    .navbar-toggler {
+      display: none; } }
+  .navbar-toggler:focus {
+    outline: none; }
+
+@media (max-width: 767px) {
+  .cdr-brand {
+    position: relative;
+    z-index: 10;
+    width: 300px; }
+    .cdr-brand img {
+      position: absolute;
+      top: 0;
+      left: 0; } }
+
+.cdr-nav {
+  flex: 1 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center; }
+  @media (max-width: 767px) {
+    .cdr-nav {
+      transform: translateY(-100%);
+      transition: all .3s ease-in-out;
+      flex-flow: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      padding-top: 70px;
+      background-position: top left;
+      background-size: auto;
+      background-repeat: repeat;
+      background-color: #6F7832;
+      background-image: url(../img/mobile-menu-texture.svg); }
+      .admin-bar .cdr-nav {
+        height: calc(100vh - 46px); }
+      .cdr-nav * {
+        color: white; }
+      .cdr-nav .support-wrapper {
+        margin-top: 3rem;
+        flex: 0 0 60px;
+        width: 180px;
+        height: 60px;
+        order: 1;
+        position: relative; }
+        .cdr-nav .support-wrapper a, .cdr-nav .support-wrapper svg {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0; }
+        .cdr-nav .support-wrapper span {
+          left: 0;
+          top: 0;
+          width: 100%;
+          text-align: center;
+          font-size: 2.8rem;
+          line-height: 58px;
+          margin: 0;
+          color: white; }
+      .cdr-nav .cdr-menu {
+        order: 2;
+        flex: 0 auto;
+        margin-top: 2rem; }
+        .cdr-nav .cdr-menu .menu-item {
+          flex: 0 0 100%; }
+          .cdr-nav .cdr-menu .menu-item a {
+            font-size: 3rem;
+            padding: 1.6rem 0; } }
 
 /*# sourceMappingURL=cdr.css.map */
