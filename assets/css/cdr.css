@@ -41,9 +41,13 @@ a, p, li {
   color: #454545; }
 
 .cdr-navbar {
+  background-position: top left;
+  background-size: auto;
+  background-repeat: repeat;
+  background-image: url(../img/mobile-menu-texture.svg);
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   padding: 1.1rem 1.8rem; }

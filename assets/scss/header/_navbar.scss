@@ -1,10 +1,12 @@
+// main navbar styles
+
 .cdr-navbar {
-
-
+  @include background-image(top left, auto, repeat);
+  background-image: url(../img/mobile-menu-texture.svg);
 
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   padding: 1.1rem 1.8rem;

@@ -11,6 +11,7 @@ jQuery(document).ready(function($) {
     if ( toggler.classList.contains('open') ) {
       nav.style.transform = 'translateY(-100%)';
       toggler.classList.remove('open');
+      toggler.setAttribute('aria-expanded', false);
       toggleTR.setAttribute('fill', '#478E41');
       toggleTL.setAttribute('fill', '#478E41');
       toggleBR.setAttribute('fill', '#478E41');
@@ -21,12 +22,14 @@ jQuery(document).ready(function($) {
     } else {
       nav.style.transform = 'translateY(0)';
       toggler.classList.add('open');
+      toggler.setAttribute('aria-expanded', true);
       toggleTR.setAttribute('fill', 'white');
       toggleTL.setAttribute('fill', 'white');
       toggleBR.setAttribute('fill', 'white');
       toggleBL.setAttribute('fill', 'white');
       logoLight.style.opacity = '1';
       logoDark.style.opacity = '0';
+
 
     }
   };
