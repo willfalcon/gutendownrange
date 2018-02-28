@@ -1,14 +1,59 @@
 .navbar-toggler {
   display: block;
 
-  display: relative;
-  height: 40px;
-  width: 40px;
+  
+  height: 41px;
+  width: 41px;
   padding: 0;
+  transition: all .25s;
+  * {
+    transition: all .25s;
+  }
 
   span {
-
+    position: absolute;
+    display: block;
+    opacity: 1;
+    right: 28px;
+    width: 20px;
+    height: 2px;
+    background: $green;
+    transform: rotate(0deg);
+    &:nth-child(2) {
+      top: 24px;
+    }
+    &:nth-child(3) {
+      top: 31px;
+    }
+    &:nth-child(4) {
+      top: 38px;
+    }
   }
+
+  &.open {
+    svg {
+      transform: rotateZ(360deg);
+    }
+    span {
+      // right: -28px;
+      background: white;
+      &:nth-child(2) {
+        top: 31px;
+        transform: rotate(-135deg)
+      }
+      &:nth-child(3) {
+        opacity: 0;
+      }
+      &:nth-child(4) {
+        top: 31px;
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+
+
+
 
 
   @media (min-width: $break) {
@@ -21,11 +66,14 @@
 }
 
 .cdr-brand {
+
   @media (max-width: $break - 1 ) {
     position: relative;
     z-index: 10;
     width: 300px;
+
     img {
+      transition: all .25s;
       position: absolute;
       top: 0;
       left: 0;
