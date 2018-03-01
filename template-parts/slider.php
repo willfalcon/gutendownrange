@@ -10,7 +10,7 @@
         $button = get_sub_field( 'button' );
       ?>
 
-      <div class="slide">
+      <div class="slide<?php if ( get_row_index() == 1 ) : ?> slide-right<?php endif; ?>">
         <img src="<?php echo $img['sizes']['large']; ?>" />
         <a class="lightbox-link" href="<?php echo $img['url']; ?>" data-lightbox="slide-img-<?php the_row_index(); ?>" data-alt="<?php echo $img['alt']; ?>">
         </a>

@@ -66,3 +66,10 @@
       }
       return $classes;
     }
+
+      
+    $site_options = array(
+      'page_title' => 'Site Options'
+    );
+
+    acf_add_options_page( $site_options );

@@ -5,12 +5,15 @@
     // @include background-image;
     height: 450px;
     width: 100%;
-    padding: 3rem 7rem;
+    padding: 3rem 4rem;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
     position: relative;
+    @media (min-width: $break) {
+      padding: 3rem 7rem;
+    }
     .lightbox-link {
       position: absolute;
       top: 0;
@@ -19,6 +22,10 @@
       height: 100%;
       z-index: 10;
       @include texture;
+      display: none;
+      @media (min-width: $break) {
+        display: block;
+      }
     }
     img {
       position: absolute;
@@ -66,6 +73,28 @@
   width: 100px;
   height: 100px;
   background: transparent;
+  &.previous {
+    left: 0;
+    svg {
+      left: 0;
+    }
+  }
+  &.next {
+    right: 0;
+    svg {
+      left: auto;
+      right: 0;
+    }
+  }
+  @media (min-width: $break) {
+    &.previous {
+      left: 10px;
+
+    }
+    &.next {
+      right: 10px;
+    }
+  }
 }
 .flickity-prev-next-button:hover {
   background: transparent;

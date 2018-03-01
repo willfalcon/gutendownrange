@@ -1,0 +1,26 @@
+.slide-down {
+  p {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all .5s;
+
+  }
+  &.show p {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-right {
+  h2 {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all .5s;
+  }
+  &.show {
+    h2 {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}

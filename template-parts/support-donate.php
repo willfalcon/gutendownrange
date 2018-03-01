@@ -1,4 +1,3 @@
-
 <div class="donate">
 
   <h2 class="donate__heading">
@@ -37,24 +36,22 @@
 
 </div>
 
-<div class="sponsors">
+<?php if ( have_rows( 'sponsors', 'option' ) ) : ?>
 
-  <h3 class="sponsors__heading">
-    <span class="line"></span>
-    <span class="text">Our Sponsors</span>
-    <span class="line"></span>
-  </h3>
+  <div class="sponsors">
 
-  <ul class="sponsors__list">
-    <li>Clinton Body Shop</li>
-    <li>Fleetway Market</li>
-    <li>Godfrey & Ivy Realty</li>
-    <li>Lefleur Transportation</li>
-    <li>McGuire's Taxidermy</li>
-    <li>Northwestern Mutual</li>
-    <li>Tauzin Wealth Management</li>
-    <li>Old South Construction</li>
-    <li>U-Save Car & Truck Rental</li>
-  </ul>
+    <h3 class="sponsors__heading">
+      <span class="line"></span>
+      <span class="text">Our Sponsors</span>
+      <span class="line"></span>
+    </h3>
 
-</div>
+    <ul class="sponsors__list">
+      <?php while ( have_rows( 'sponsors', 'option' ) ) : the_row(); ?>
+        <li><?php the_sub_field( 'sponsor' ); ?></li>
+      <?php endwhile; ?>
+    </ul>
+
+  </div>
+
+<?php endif; ?>

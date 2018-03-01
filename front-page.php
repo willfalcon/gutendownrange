@@ -1,23 +1,9 @@
 <?php get_header(); ?>
 
   <div class="top">
-    <div class="top__content">
+    <div class="top__content slide-down on-load">
       <p class="font-main">Camp Down Range creates challenging experiences to push participants past their comfort  zones and gain a lifelong benefit  of team bonding, personal development, and the ability  of triumph over adversity.</p>
     </div>
-  </div>
-
-  <div class="slider">
-
-    <h2 class="slider__title">
-      Basic Training
-    </h2>
-    <p class="slider__copy">
-      Basic Training is run by our expert facilitator  and customized for church groups, corporate  team-building, youth group retreats, and more. Any age or comfort with physical activity welcome!
-    </p>
-    <a href="#" class="button slider__button">
-      Learn More
-    </a>
-
   </div>
 
   <div class="snippets">

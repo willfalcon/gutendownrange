@@ -53,7 +53,21 @@
       font-size: 1.8rem;
       list-style: none;
       padding: 0 1rem;
+      display: inline;
+      white-space: nowrap;
+      &:after {
+        content: " \00b7";
+        margin-left: 1rem;
+      }
+      &.nobullet:after {
+        content: none;
+      }
     }
   }
 
+  &--top {
+    @extend .sponsors;
+    margin: 1rem -15px -3rem;;
+    padding: 2rem 1rem 7rem;
+  }
 }
