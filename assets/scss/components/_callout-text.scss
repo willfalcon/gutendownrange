@@ -1,0 +1,14 @@
+.callout-text {
+  margin: 2rem -15px;
+  @include texture;
+  &__content {
+    @include font-main;
+    font-size: 2.6rem;
+    color: $green;
+    text-align: center;
+    width: $content-width;
+    max-width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+}

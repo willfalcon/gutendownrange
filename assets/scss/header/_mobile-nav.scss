@@ -1,163 +1,163 @@
 //mobile-specific navbar styles
-
-.navbar-toggler {
-  display: block;
-
-
-  height: 41px;
-  width: 41px;
-  padding: 0;
-  transition: all .25s;
-  * {
-    transition: all .25s;
-  }
-
-  span {
-    position: absolute;
+.cdr-navbar {
+  &__toggler {
     display: block;
-    opacity: 1;
-    right: 28px;
-    width: 20px;
-    height: 2px;
-    background: $green;
-    transform: rotate(0deg);
-    &:nth-child(2) {
-      top: 24px;
-    }
-    &:nth-child(3) {
-      top: 31px;
-    }
-    &:nth-child(4) {
-      top: 38px;
-    }
-  }
 
-  &.open {
-    svg {
-      transform: rotateZ(360deg);
+
+    height: 41px;
+    width: 41px;
+    padding: 0;
+    transition: all .25s;
+    * {
+      transition: all .25s;
     }
+
     span {
-      // right: -28px;
-      background: white;
+      position: absolute;
+      display: block;
+      opacity: 1;
+      right: 28px;
+      width: 20px;
+      height: 2px;
+      background: $green;
+      transform: rotate(0deg);
       &:nth-child(2) {
-        top: 31px;
-        transform: rotate(-135deg)
+        top: 24px;
       }
       &:nth-child(3) {
-        opacity: 0;
+        top: 31px;
       }
       &:nth-child(4) {
-        top: 31px;
-        transform: rotate(135deg);
+        top: 38px;
       }
     }
-  }
 
-
-
-
-
-
-  @media (min-width: $break) {
-    display: none;
-  }
-  &:focus {
-    outline: none;
-  }
-  z-index: 10;
-}
-
-.cdr-brand {
-
-  @media (max-width: $break - 1 ) {
-    position: relative;
-    z-index: 10;
-    width: 300px;
-
-    img {
-      transition: all .25s;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-}
-
-.cdr-nav {
-  flex: 1 auto;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  text-align: center;
-
-  @media (max-width: $break - 1) {
-
-    transform: translateY(-100%);
-    transition: all .3s ease-in-out;
-
-    flex-flow: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100vw;
-    height: 100vh;
-    padding-top: 70px;
-
-    .admin-bar & {
-      height: calc(100vh - 46px);
-    }
-
-    @include background-image(top left, auto, repeat);
-    background-color: $green-menu;
-    background-image: url(../img/mobile-menu-texture.svg);
-
-    * {
-      color: white;
-    }
-
-    .support-wrapper {
-      margin-top: 3rem;
-      flex: 0 0 60px;
-      width: 180px;
-      height: 60px;
-      order: 1;
-      position: relative;
-      a, svg {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+    &.open {
+      svg {
+        transform: rotateZ(360deg);
       }
       span {
-        left: 0;
-        top: 0;
-        width: 100%;
-        text-align: center;
-        font-size: 2.8rem;
-        line-height: 58px;
-        margin:0;
-        color: white;
-      }
-    }
-    .cdr-menu {
-      order: 2;
-      flex: 0 auto;
-      margin-top: 2rem;
-      .menu-item {
-        flex: 0 0 100%;
-        a {
-          font-size: 3rem;
-          padding: 1.6rem 0;
+        // right: -28px;
+        background: white;
+        &:nth-child(2) {
+          top: 31px;
+          transform: rotate(-135deg)
+        }
+        &:nth-child(3) {
+          opacity: 0;
+        }
+        &:nth-child(4) {
+          top: 31px;
+          transform: rotate(135deg);
         }
       }
     }
 
+
+
+
+
+
+    @media (min-width: $break) {
+      display: none;
+    }
+    &:focus {
+      outline: none;
+    }
+    z-index: 10;
   }
 
+  &__brand {
+
+    @media (max-width: $break - 1 ) {
+      position: relative;
+      z-index: 10;
+      width: 300px;
+
+      img {
+        transition: all .25s;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &__nav {
+    flex: 1 auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+
+    @media (max-width: $break - 1) {
+
+      transform: translateY(-100%);
+      transition: all .3s ease-in-out;
+
+      flex-flow: column;
+      align-items: center;
+      justify-content: flex-start;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100vw;
+      height: 100vh;
+      padding-top: 70px;
+
+      .admin-bar & {
+        height: calc(100vh - 46px);
+      }
+
+      background-color: $green-menu;
+      @include texture;
+
+      * {
+        color: white;
+      }
+
+      .support-wrapper {
+        margin-top: 3rem;
+        flex: 0 0 60px;
+        width: 180px;
+        height: 60px;
+        order: 1;
+        position: relative;
+        a, svg {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        span {
+          left: 0;
+          top: 0;
+          width: 100%;
+          text-align: center;
+          font-size: 2.8rem;
+          line-height: 58px;
+          margin:0;
+          color: white;
+        }
+      }
+      .cdr-menu {
+        order: 2;
+        flex: 0 auto;
+        margin-top: 2rem;
+        .menu-item {
+          flex: 0 0 100%;
+          a {
+            font-size: 3rem;
+            padding: 1.6rem 0;
+          }
+        }
+      }
+
+    }
+
+  }
 }

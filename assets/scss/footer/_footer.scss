@@ -1,0 +1,87 @@
+//footer
+
+.footer {
+  background-color: $grey;
+  @include texture;
+
+  margin: 0 -15px;
+
+  padding: 1rem 2rem;
+  @media (min-width: $break) {
+    padding: 3.5rem 3rem 1.5rem;
+  }
+
+  display: flex;
+  flex-flow: row wrap;
+
+  &__contact-info {
+
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    p {
+      color: white;
+      font-size: 1.6rem;
+      margin-bottom: .5rem;
+    }
+
+  }
+
+  &__address {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    @media (min-width: $break) {
+      flex: 0 0 50%;
+      max-width: 50%;
+      order: 1;
+    }
+  }
+
+  &__social-links {
+    flex: 0 0 100%;
+    margin: 1rem 0;
+    text-align: center;
+    a {
+      margin: 0 .8rem;
+      &:first-child {
+        margin-left:0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    @media (min-width: $break) {
+      flex: 0 0 50%;
+      max-width: 50%;
+      order: 3;
+    }
+  }
+
+
+  &__mailing-address {
+    text-align: center;
+    flex: 0 0 100%;
+    max-width: 100%;
+    @media (min-width: $break) {
+      flex: 0 0 50%;
+      max-width: 50%;
+      order: 2;
+    }
+  }
+
+  &__bottom {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    p, a {
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
+
+}

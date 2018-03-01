@@ -13,3 +13,9 @@
   background-repeat: $repeat;
   @content;
 }
+
+@mixin texture {
+  @include background-image(top left, auto, repeat) {
+    background-image: url('../img/texture.svg');
+  }
+}

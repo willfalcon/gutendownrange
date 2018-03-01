@@ -1,0 +1,102 @@
+.slider {
+
+  margin: 0 -15px;
+  .slide {
+    // @include background-image;
+    height: 450px;
+    width: 100%;
+    padding: 3rem 7rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    .lightbox-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      @include texture;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -20;
+    }
+
+    &__title {
+      background: $block-background;
+      color: white;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: .7rem 1.5rem;
+      z-index: 20;
+    }
+    &__copy {
+      background: $block-background;
+      color: white;
+      padding: .7rem 1.5rem;
+      width: 450px;
+      max-width: 100%;
+      z-index: 20;
+    }
+    &__button {
+      background: rgba($green, .3);
+      color: white;
+      border-color: white;
+      z-index: 30;
+
+      &:hover {
+        background: white;
+        color: $green;
+        border-color: $green;
+      }
+    }
+  }
+
+}
+
+.flickity-prev-next-button {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+}
+.flickity-prev-next-button:hover {
+  background: transparent;
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: white;
+}
+.flickity-prev-next-button.no-svg {
+  color: white;
+}
+
+/* position dots in carousel */
+.flickity-page-dots {
+  bottom: 0px;
+  padding: 1rem;
+  background: $block-background;
+  width: auto;
+  left: 50%;
+  transform: translateX(-50%);
+
+
+  .dot {
+    border-radius: 0;
+    background: white;
+    opacity: 1;
+    border: 0;
+    transition: all .25s;
+    &.is-selected {
+      background: $green-light;
+      border: 1px solid white;
+    }
+  }
+}

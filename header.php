@@ -11,16 +11,16 @@
 
   </head>
 
-  <body <?php body_class(); ?>>
+  <body <?php body_class( cdr_body_classes() ); ?>>
 
     <nav class="cdr-navbar">
 
-      <a class="cdr-brand" href="<?php bloginfo('url'); ?>">
+      <a class="cdr-navbar__brand" href="<?php bloginfo('url'); ?>">
         <img id="logoDark" class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/CDR-logo-02.png" alt="Camp Down Range"/>
         <img id="logoLight" style="opacity: 0;" class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/CDR-logo-light.png" alt="Camp Down Range"/>
       </a>
 
-      <button id="navbarToggler" class="navbar-toggler" type="button" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle Main Menu">
+      <button id="navbarToggler" class="cdr-navbar__toggler" type="button" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle Main Menu">
 
         <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
@@ -54,7 +54,7 @@
         <span></span>
       </button>
 
-      <div class="cdr-nav" id="main_nav">
+      <div class="cdr-navbar__nav" id="main_nav">
 
         <?php
           $main_menu = array(

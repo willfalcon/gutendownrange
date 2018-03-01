@@ -1,0 +1,70 @@
+.donate {
+
+  background-image: url('../img/donate-bg.png');
+  @include background-image;
+  height: 210px;
+  margin: 0 -15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  padding: 3rem;
+  @media (min-width: $break) {
+    padding: 4.5rem;
+  }
+
+  &__heading {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    // margin: 0;
+    line-height: 36px;
+
+    @media (min-width: $break) {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      span {
+        &.line {
+          flex: 1 1 auto;
+          height: 2px;
+          background: white;
+        }
+        &.text {
+          flex: 0 0 auto;
+          padding: 0 1rem;
+        }
+      }
+      padding: 0 calc(10vw - 45px);
+    }
+  }
+  &__button-wrapper {
+    // flex: 100%;
+    margin: 0 auto;
+    height: 60px;
+    width: 180px;
+    text-align: center;
+  }
+  &__button {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    span {
+      position: absolute;
+      top: 16px;
+      left: 44px;
+      color: white;
+      @include font-main;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+    }
+  }
+}

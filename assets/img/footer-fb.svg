@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 29.9994 0 29.9994 29.99985 0 29.99985"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer" transform="translate(-30.000000, -133.000000)">
+            <g id="Page-1" transform="translate(30.000000, 133.000000)">
+                <g id="Group-3">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M29.2494,-0.00015 L0.7494,-0.00015 C0.3369,-0.00015 -0.0006,0.33585 -0.0006,0.74985 L-0.0006,29.24985 C-0.0006,29.66385 0.3369,29.99985 0.7494,29.99985 L29.2494,29.99985 C29.6634,29.99985 29.9994,29.66385 29.9994,29.24985 L29.9994,0.74985 C29.9994,0.33585 29.6634,-0.00015 29.2494,-0.00015" id="Fill-1" fill="#97AA3A" mask="url(#mask-2)"></path>
+                </g>
+                <path d="M17.1468,11.69955 L17.1543,9.75105 C17.1573,9.02055 17.6448,8.85255 17.9853,8.85255 L20.0778,8.86155 L20.0913,5.64855 L17.2068,5.62455 C14.0043,5.61105 13.2663,8.00805 13.2603,9.53955 L13.2513,11.68005 L11.4003,11.67255 L11.3853,14.98155 L13.2393,14.99055 L13.1988,24.35805 L17.0943,24.37455 L17.1318,15.00555 L19.7598,15.01605 L20.1153,11.71155 L17.1468,11.69955 Z" id="Fill-4" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -46,3 +46,7 @@ a, p, li {
   line-height: 26px;
   color: $grey;
 }
+
+.font-main {
+  @include font-main;
+}
