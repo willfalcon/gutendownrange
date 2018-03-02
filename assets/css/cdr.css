@@ -84,6 +84,52 @@ a, p, li {
     @media (min-width: 768px) {
       .cdr-navbar .cdr-menu {
         flex-direction: row; } }
+    .cdr-navbar .cdr-menu .menu-item-has-children {
+      position: relative; }
+      .cdr-navbar .cdr-menu .menu-item-has-children .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: -25%;
+        list-style: none;
+        padding-left: 0;
+        z-index: -15;
+        display: none;
+        flex-flow: row wrap;
+        width: 150%; }
+        .cdr-navbar .cdr-menu .menu-item-has-children .sub-menu.show {
+          display: flex; }
+        .cdr-navbar .cdr-menu .menu-item-has-children .sub-menu li {
+          background: white;
+          background-position: top left;
+          background-size: auto;
+          background-repeat: repeat;
+          background-image: url("../img/texture.svg");
+          flex: 0 0 100%;
+          transition: all .15s;
+          position: relative;
+          perspective: 100px;
+          transform: rotateX(145deg);
+          opacity: 0;
+          transform-origin: 0 top; }
+          .cdr-navbar .cdr-menu .menu-item-has-children .sub-menu li:nth-child(1) {
+            transition-delay: 0s; }
+          .cdr-navbar .cdr-menu .menu-item-has-children .sub-menu li:nth-child(2) {
+            transition-delay: 0.08s; }
+          .cdr-navbar .cdr-menu .menu-item-has-children .sub-menu li:nth-child(3) {
+            transition-delay: 0.16s; }
+          .cdr-navbar .cdr-menu .menu-item-has-children .sub-menu li:nth-child(4) {
+            transition-delay: 0.24s; }
+          .cdr-navbar .cdr-menu .menu-item-has-children .sub-menu li:nth-child(5) {
+            transition-delay: 0.32s; }
+          .cdr-navbar .cdr-menu .menu-item-has-children .sub-menu li:nth-child(6) {
+            transition-delay: 0.4s; }
+          .cdr-navbar .cdr-menu .menu-item-has-children .sub-menu li:nth-child(7) {
+            transition-delay: 0.48s; }
+          .cdr-navbar .cdr-menu .menu-item-has-children .sub-menu li:nth-child(8) {
+            transition-delay: 0.56s; }
+          .cdr-navbar .cdr-menu .menu-item-has-children .sub-menu li.flip {
+            transform: rotateX(0);
+            opacity: 1; }
   .cdr-navbar .menu-item a {
     font-family: "paralucent-stencil",sans-serif;
     font-style: normal;
