@@ -14,6 +14,10 @@ $block-background: rgba(lighten(black, 5), .65);
 
 // Sizes
 
-$break: 768px;
+  //these are based on bootstrap's sm, md, lg, and xl breakpoints
+$break: 768px; // this is the md breakpoint
+$break-sm: 576px;
+$break-lg: 992px;
+$break-xl: 1200px;
 
 $content-width: 800px;

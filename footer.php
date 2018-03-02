@@ -32,6 +32,14 @@
         </div>
       </div>
 
+      <div class="footer__subscribe-form">
+
+        <?php
+          gravity_form( 1, true, false, false, null, true );
+        ?>
+
+      </div>
+
       <div class="footer__bottom">
 
         <p>&copy;<?php echo date('Y'); ?>, <?php bloginfo( 'name' ); ?> | <a href="mailto:services@campdownrange.org">Services@CampDownRange.org</a></p>

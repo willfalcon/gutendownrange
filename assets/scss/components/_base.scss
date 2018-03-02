@@ -22,3 +22,9 @@
     text-decoration: none;
   }
 }
+
+a, button, input {
+  &:focus {
+    outline: rgba($green-dark, .3) auto 5px;
+  }
+}

@@ -19,3 +19,9 @@
     background-image: url('../img/texture.svg');
   }
 }
+
+@mixin responsive($breakpoint: $break) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}

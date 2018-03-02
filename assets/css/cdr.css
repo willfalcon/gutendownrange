@@ -253,6 +253,10 @@ a, p, li {
     max-width: 100%;
     display: flex;
     flex-flow: row wrap; }
+    @media (min-width: 768px) {
+      .footer__contact-info {
+        flex: 0 0 50%;
+        max-width: 50%; } }
     .footer__contact-info p {
       color: white;
       font-size: 1.6rem;
@@ -290,6 +294,62 @@ a, p, li {
         flex: 0 0 50%;
         max-width: 50%;
         order: 2; } }
+  .footer__subscribe-form {
+    flex: 0 0 100%;
+    max-width: 100%; }
+    @media (min-width: 768px) {
+      .footer__subscribe-form {
+        flex: 0 0 50%;
+        max-width: 50%; } }
+    .footer__subscribe-form .gform_title {
+      font-family: "paralucent-stencil",sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      color: white;
+      text-transform: uppercase;
+      font-size: 1.6rem; }
+    .footer__subscribe-form .gform_fields {
+      display: flex;
+      padding: 0;
+      margin: 0; }
+      .footer__subscribe-form .gform_fields .gfield {
+        flex: 0 0 50%;
+        max-width: 50%; }
+        .footer__subscribe-form .gform_fields .gfield .ginput_container {
+          padding: 1rem;
+          padding-left: 0; }
+        .footer__subscribe-form .gform_fields .gfield input {
+          background: transparent;
+          color: white;
+          height: 40px;
+          width: 100%;
+          font-size: 1.4rem;
+          border: 1px solid white;
+          border-radius: 2px;
+          padding: .7rem 1rem; }
+          .footer__subscribe-form .gform_fields .gfield input::placeholder {
+            color: white; }
+        .footer__subscribe-form .gform_fields .gfield .gfield_label {
+          display: none; }
+    .footer__subscribe-form .gform_footer input {
+      background: #97AA3A;
+      color: white;
+      border: 0;
+      cursor: pointer; }
+      .footer__subscribe-form .gform_footer input:hover {
+        background: white;
+        color: #97AA3A;
+        border: 1px solid #97AA3A; }
+    .footer__subscribe-form .validation_error {
+      color: white;
+      font-size: 1.4rem; }
+    .footer__subscribe-form .gfield_description.validation_message {
+      color: white; }
+    .footer__subscribe-form .gform_confirmation_wrapper {
+      padding: 2rem; }
+      .footer__subscribe-form .gform_confirmation_wrapper .gform_confirmation_message {
+        color: white;
+        font-size: 1.4rem; }
   .footer__bottom {
     flex: 0 0 100%;
     max-width: 100%;
@@ -673,6 +733,9 @@ a, p, li {
   transition: all .25s; }
   .button:hover {
     text-decoration: none; }
+
+a:focus, button:focus, input:focus {
+  outline: rgba(84, 115, 52, 0.3) auto 5px; }
 
 .front-page .top {
   background-position: center;
