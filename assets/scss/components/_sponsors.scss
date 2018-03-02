@@ -67,7 +67,11 @@
 
   &--top {
     @extend .sponsors;
-    margin: 1rem -15px -3rem;;
+    margin: 1rem -15px -3rem;
     padding: 2rem 1rem 7rem;
+    @include responsive {
+      padding: 5rem 3rem 7rem;
+
+    }
   }
 }

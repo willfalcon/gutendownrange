@@ -1,14 +1,16 @@
 .regular-content {
   margin: 0 -15px;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   @include texture;
   &__title {
     text-align: center;
+
     @media (min-width: $break) {
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
+      padding: 0 calc(10vw - 1rem);
       .line {
         height: 2px;
         background-color: $green;
@@ -20,11 +22,24 @@
         flex: 0 0 auto;
       }
     }
+    &--color-white {
+      @extend .regular-content__title;
+      .line {
+        background-color: white;
+      }
+      .text {
+        color: white;
+      }
+    }
   }
   &__content {
     width: $content-width;
     max-width: 100%;
     padding: 2rem;
     margin: 0 auto;
+    &--color-white * {
+      @extend .regular-content__content;
+      color: white;
+    }
   }
 }

@@ -67,9 +67,35 @@
       return $classes;
     }
 
-      
+
     $site_options = array(
       'page_title' => 'Site Options'
     );
 
     acf_add_options_page( $site_options );
+
+    function acf_load_color_field_choices($field) {
+
+      // reset choices
+      $field['choices'] = array();
+
+      // get the textarea value from options page without any formatting
+      $repeater_field = get_field('color_palette', 'option', false);
+
+      $choices = array();
+
+      while ( have_rows('color_palette', 'option') ) : the_row();
+
+        $label = get_sub_field('label');
+        $color = get_sub_field('color');
+        $string = $label . ' : ' . $color;
+        $field['choices'][ $color ] = $label;
+
+      endwhile;
+
+      // return the field
+      return $field;
+
+    }
+
+    add_filter('acf/load_field/name=regular_content_background_color', 'acf_load_color_field_choices');
