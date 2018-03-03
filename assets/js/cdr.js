@@ -161,28 +161,39 @@ var menuParents = document.querySelectorAll('.menu-item-has-children');
 // Iterate over those menu items with child sub menus.
 for (var parent of menuParents) {
 
-  parent.addEventListener('mouseover', function() {
+  parent.addEventListener('mouseenter', function() {
 
     var child = document.getElementById(this.getAttribute('data-child'));
     child.classList.add('show');
 
-    window.setTimeout(function() {
-      for (i=0;i<child.children.length;i++) {
-        child.children[i].classList.add('flip');
-      }
-    }, 0);
+    function addFlip(i) {
+      child.children[i].classList.add('flip');
+    }
+
+    for (i=0;i<child.children.length;i++) {
+
+      setTimeout(addFlip, i * 80, i);
+
+    }
 
   });
 
 
   parent.addEventListener('mouseleave', function() {
     var child = document.getElementById(this.getAttribute('data-child'));
-    window.setTimeout(function() {
-      for (i=0;i<child.children.length;i++) {
-        child.children[i].classList.remove('flip');
-      }
-    }, 0);    // window.setTimeout(function() {
-    //   child.classList.remove('show');
-    // }, 1);
+
+    function removeFlip(i) {
+      child.children[i].classList.remove('flip');
+    }
+
+    for (i=(child.children.length-1);i>=0;i--) {
+
+      setTimeout(removeFlip, (child.children.length - 1 - i) * 80, i);
+    }
+    setTimeout(function() {
+      child.classList.remove('show');
+    }, child.children.length *80);
+
+
   });
 }

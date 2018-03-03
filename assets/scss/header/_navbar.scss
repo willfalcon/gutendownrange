@@ -65,7 +65,7 @@
         flex-flow: row wrap;
         width: 150%;
         &.show {
-          display: flex;
+          display: block;
         }
 
         li {
@@ -79,11 +79,11 @@
           transform: rotateX(145deg);
           opacity: 0;
           transform-origin: 0 top;
-          @for $i from 1 through 8 {
-            &:nth-child(#{$i}) {
-              transition-delay: ($i - 1) * .08s;
-            }
-          }
+          // @for $i from 1 through 8 {
+          //   &:nth-child(#{$i}) {
+          //     transition-delay: ($i - 1) * .08s;
+          //   }
+          // }
           &.flip {
               transform: rotateX(0);
               opacity: 1;
