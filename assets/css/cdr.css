@@ -40,6 +40,9 @@ a, p, li {
   line-height: 26px;
   color: #454545; }
 
+a:hover {
+  color: #478E41; }
+
 .font-main {
   font-family: "paralucent-stencil",sans-serif;
   font-style: normal;

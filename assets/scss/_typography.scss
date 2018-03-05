@@ -47,6 +47,10 @@ a, p, li {
   color: $grey;
 }
 
+a:hover {
+  color: $green;
+}
+
 .font-main {
   @include font-main;
 }
