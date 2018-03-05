@@ -38,6 +38,12 @@ a, button, input {
     text-transform: uppercase;
   }
 
+  &.color-white {
+    .text {
+      color: white;
+    }
+  }
+
   @media (min-width: $break) {
     display: flex;
     flex-flow: row nowrap;
@@ -48,6 +54,11 @@ a, button, input {
       height: 2px;
       background-color: $green;
       flex: 1 1 auto;
+    }
+    &.color-white {
+      .line {
+        background-color: white;
+      }
     }
     .text {
       padding: 0 1rem;

@@ -67,6 +67,9 @@
       if ( is_page( 'staff' ) ) {
         $classes .= 'staff-page';
       }
+      if ( is_page( 'contact' ) ) {
+        $classes .= 'contact-page';
+      }
       return $classes;
     }
 

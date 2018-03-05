@@ -1,0 +1,68 @@
+.contact-bg {
+  margin: 0 -15px;
+  margin-bottom: -30px;
+  @include background-image(center 80%);
+  background-image: url('../img/contact-bg.jpg');
+  padding: 3rem 2rem 21rem;
+  .contact-box {
+    background-color: rgba($green-menu, .8);
+    width: $content-width;
+    max-width: 100%;
+    margin: 1rem auto;
+    padding: 2rem 8rem;
+    padding-right: 7rem;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    h1 {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-form {
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+    }
+    .contact-info {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+      padding-left: 3rem;
+      h5, p {
+        text-shadow: black 0 2px 4px;
+        margin-bottom: 0;
+      }
+      h5 {
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      p {
+        color: white;
+      }
+    }
+  }
+}
+
+.contact-page {
+  .contact-box {
+    .gform_body {
+      .gfield {
+        input, textarea {
+          background-color: white;
+          color: $grey;
+          &::placeholder {
+            color: $grey;
+          }
+        }
+      }
+    }
+    .gform_button {
+      border: 1px solid white;
+      &:hover {
+        border-color: $green-light;
+      }
+    }
+  }
+}

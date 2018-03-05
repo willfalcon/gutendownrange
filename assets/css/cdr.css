@@ -25,9 +25,10 @@ h4 {
   font-weight: 900; }
 
 h5 {
-  font-family: "paralucent-stencil",sans-serif;
-  font-style: normal;
-  font-weight: 900; }
+  font-family: Arial,sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: #454545; }
 
 h6 {
   font-family: "paralucent-stencil",sans-serif;
@@ -454,65 +455,6 @@ a:hover {
             -ms-flex: 0 0 50%;
                 flex: 0 0 50%;
         max-width: 50%; } }
-    .footer__subscribe-form .gform_title {
-      font-family: "paralucent-stencil",sans-serif;
-      font-style: normal;
-      font-weight: 900;
-      color: white;
-      text-transform: uppercase;
-      font-size: 1.6rem; }
-    .footer__subscribe-form .gform_fields {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      padding: 0;
-      margin: 0; }
-      .footer__subscribe-form .gform_fields .gfield {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 50%;
-                flex: 0 0 50%;
-        max-width: 50%; }
-        .footer__subscribe-form .gform_fields .gfield .ginput_container {
-          padding: 1rem;
-          padding-left: 0; }
-        .footer__subscribe-form .gform_fields .gfield input {
-          background: transparent;
-          color: white;
-          height: 40px;
-          width: 100%;
-          font-size: 1.4rem;
-          border: 1px solid white;
-          border-radius: 2px;
-          padding: .7rem 1rem; }
-          .footer__subscribe-form .gform_fields .gfield input::-webkit-input-placeholder {
-            color: white; }
-          .footer__subscribe-form .gform_fields .gfield input:-ms-input-placeholder {
-            color: white; }
-          .footer__subscribe-form .gform_fields .gfield input::-ms-input-placeholder {
-            color: white; }
-          .footer__subscribe-form .gform_fields .gfield input::placeholder {
-            color: white; }
-        .footer__subscribe-form .gform_fields .gfield .gfield_label {
-          display: none; }
-    .footer__subscribe-form .gform_footer input {
-      background: #97AA3A;
-      color: white;
-      border: 0;
-      cursor: pointer; }
-      .footer__subscribe-form .gform_footer input:hover {
-        background: white;
-        color: #97AA3A;
-        border: 1px solid #97AA3A; }
-    .footer__subscribe-form .validation_error {
-      color: white;
-      font-size: 1.4rem; }
-    .footer__subscribe-form .gfield_description.validation_message {
-      color: white; }
-    .footer__subscribe-form .gform_confirmation_wrapper {
-      padding: 2rem; }
-      .footer__subscribe-form .gform_confirmation_wrapper .gform_confirmation_message {
-        color: white;
-        font-size: 1.4rem; }
   .footer__bottom {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
@@ -1044,6 +986,8 @@ a:focus, button:focus, input:focus {
   .page-title .text {
     color: #478E41;
     text-transform: uppercase; }
+  .page-title.color-white .text {
+    color: white; }
   @media (min-width: 768px) {
     .page-title {
       display: -webkit-box;
@@ -1066,6 +1010,8 @@ a:focus, button:focus, input:focus {
         -webkit-box-flex: 1;
             -ms-flex: 1 1 auto;
                 flex: 1 1 auto; }
+      .page-title.color-white .line {
+        background-color: white; }
       .page-title .text {
         padding: 0 1rem;
         -webkit-box-flex: 0;
@@ -1194,6 +1140,71 @@ a:focus, button:focus, input:focus {
   .staff-page .modal-backdrop.show {
     opacity: .8; }
 
+.contact-bg {
+  margin: 0 -15px;
+  margin-bottom: -30px;
+  background-position: center 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../img/contact-bg.jpg");
+  padding: 3rem 2rem 21rem; }
+  .contact-bg .contact-box {
+    background-color: rgba(111, 120, 50, 0.8);
+    width: 800px;
+    max-width: 100%;
+    margin: 1rem auto;
+    padding: 2rem 8rem;
+    padding-right: 7rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap; }
+    .contact-bg .contact-box h1 {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 100%;
+              flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 1.5rem; }
+    .contact-bg .contact-box .contact-form {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 66.666667%;
+              flex: 0 0 66.666667%;
+      max-width: 66.666667%; }
+    .contact-bg .contact-box .contact-info {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 33.333333%;
+              flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+      padding-left: 3rem; }
+      .contact-bg .contact-box .contact-info h5, .contact-bg .contact-box .contact-info p {
+        text-shadow: black 0 2px 4px;
+        margin-bottom: 0; }
+      .contact-bg .contact-box .contact-info h5 {
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase; }
+      .contact-bg .contact-box .contact-info p {
+        color: white; }
+
+.contact-page .contact-box .gform_body .gfield input, .contact-page .contact-box .gform_body .gfield textarea {
+  background-color: white;
+  color: #454545; }
+  .contact-page .contact-box .gform_body .gfield input::-webkit-input-placeholder, .contact-page .contact-box .gform_body .gfield textarea::-webkit-input-placeholder {
+    color: #454545; }
+  .contact-page .contact-box .gform_body .gfield input:-ms-input-placeholder, .contact-page .contact-box .gform_body .gfield textarea:-ms-input-placeholder {
+    color: #454545; }
+  .contact-page .contact-box .gform_body .gfield input::-ms-input-placeholder, .contact-page .contact-box .gform_body .gfield textarea::-ms-input-placeholder {
+    color: #454545; }
+  .contact-page .contact-box .gform_body .gfield input::placeholder, .contact-page .contact-box .gform_body .gfield textarea::placeholder {
+    color: #454545; }
+.contact-page .contact-box .gform_button {
+  border: 1px solid white; }
+  .contact-page .contact-box .gform_button:hover {
+    border-color: #97AA3A; }
+
 .slide-down p {
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -1215,3 +1226,82 @@ a:focus, button:focus, input:focus {
   -webkit-transform: translateX(0);
           transform: translateX(0);
   opacity: 1; }
+
+.gform_title {
+  font-family: "paralucent-stencil",sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.6rem; }
+
+.gform_fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .gform_fields .gfield {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%; }
+    @media (min-width: 768px) {
+      .gform_fields .gfield.inline-at-md {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+        max-width: 50%; } }
+    .gform_fields .gfield .ginput_container {
+      padding: 1rem;
+      padding-left: 0; }
+    .gform_fields .gfield .ginput_container_name label {
+      display: none; }
+    .gform_fields .gfield input, .gform_fields .gfield textarea {
+      background: transparent;
+      color: white;
+      height: 40px;
+      width: 100%;
+      font-size: 1.4rem;
+      border: 1px solid white;
+      border-radius: 2px;
+      padding: .7rem 1rem; }
+      .gform_fields .gfield input::-webkit-input-placeholder, .gform_fields .gfield textarea::-webkit-input-placeholder {
+        color: white; }
+      .gform_fields .gfield input:-ms-input-placeholder, .gform_fields .gfield textarea:-ms-input-placeholder {
+        color: white; }
+      .gform_fields .gfield input::-ms-input-placeholder, .gform_fields .gfield textarea::-ms-input-placeholder {
+        color: white; }
+      .gform_fields .gfield input::placeholder, .gform_fields .gfield textarea::placeholder {
+        color: white; }
+    .gform_fields .gfield textarea {
+      height: 100px; }
+    .gform_fields .gfield .gfield_label {
+      display: none; }
+
+.gform_footer input {
+  background: #97AA3A;
+  color: white;
+  border: 0;
+  cursor: pointer; }
+  .gform_footer input:hover {
+    background: white;
+    color: #97AA3A; }
+
+.validation_error {
+  color: white;
+  font-size: 1.4rem; }
+
+.gfield_description.validation_message {
+  color: white; }
+
+.gform_confirmation_wrapper {
+  padding: 2rem; }
+  .gform_confirmation_wrapper .gform_confirmation_message {
+    color: white;
+    font-size: 1.4rem; }
