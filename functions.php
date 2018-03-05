@@ -64,6 +64,9 @@
       if ( is_front_page() ) {
         $classes .= 'front-page';
       }
+      if ( is_page( 'staff' ) ) {
+        $classes .= 'staff-page';
+      }
       return $classes;
     }
 

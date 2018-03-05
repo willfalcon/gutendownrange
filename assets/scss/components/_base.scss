@@ -29,3 +29,29 @@ a, button, input {
     outline: rgba($green-dark, .3) auto 5px;
   }
 }
+
+.page-title {
+  text-align: center;
+
+  .text {
+    color: $green;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: $break) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 calc(10vw - 1rem);
+    .line {
+      height: 2px;
+      background-color: $green;
+      flex: 1 1 auto;
+    }
+    .text {
+      padding: 0 1rem;
+      flex: 0 0 auto;
+    }
+  }
+}
