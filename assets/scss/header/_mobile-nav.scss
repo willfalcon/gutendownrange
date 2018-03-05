@@ -153,11 +153,33 @@
           a {
             font-size: 3rem;
             padding: 1.6rem 0;
+            &:hover {
+              color: white;
+              text-decoration: none;
+            }
+            &:focus {
+              color: white;
+              text-decoration: none;
+            }
+            i {
+              transition: all .25s;
+            }
+          }
+        }
+
+        .menu-item-has-children {
+          .sub-menu {
+            list-style: none;
+            padding-left: 0;
+            transition: all .25s;
+            a {
+              color: $green-light;
+            }
           }
         }
       }
 
-    }
+    } // @media (max-width: $break - 1)
 
-  }
-}
+  } // &__nav
+} // .cdr-navbar

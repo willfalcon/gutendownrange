@@ -51,50 +51,52 @@
       flex-direction: row;
     }
 
-    .menu-item-has-children {
-      position: relative;
+    @include responsive {
+      .menu-item-has-children {
+        position: relative;
 
-      .sub-menu {
-        position: absolute;
-        top: 100%;
-        left: -25%;
-        list-style: none;
-        padding-left: 0;
-        z-index: -15;
-        display: none;
-        flex-flow: row wrap;
-        width: 150%;
-        &.show {
-          display: block;
-        }
-
-        li {
-          background: white;
-          @include texture;
-          flex: 0 0 100%;
-
-          transition: all .15s;
-          position: relative;
-          perspective: 100px;
-          transform: rotateX(145deg);
-          opacity: 0;
-          transform-origin: 0 top;
-          // @for $i from 1 through 8 {
-          //   &:nth-child(#{$i}) {
-          //     transition-delay: ($i - 1) * .08s;
-          //   }
-          // }
-          &.flip {
-              transform: rotateX(0);
-              opacity: 1;
+        .sub-menu {
+          position: absolute;
+          top: 100%;
+          left: -25%;
+          list-style: none;
+          padding-left: 0;
+          z-index: -15;
+          display: none;
+          flex-flow: row wrap;
+          width: 150%;
+          &.show {
+            display: block;
           }
-        }
+
+          li {
+            background: white;
+            @include texture;
+            flex: 0 0 100%;
+
+            transition: all .15s;
+            position: relative;
+            perspective: 100px;
+            transform: rotateX(145deg);
+            opacity: 0;
+            transform-origin: 0 top;
+            // @for $i from 1 through 8 {
+            //   &:nth-child(#{$i}) {
+            //     transition-delay: ($i - 1) * .08s;
+            //   }
+            // }
+            &.flip {
+                transform: rotateX(0);
+                opacity: 1;
+            }
+          }
 
 
-      } // .sub-menu
+        } // .sub-menu
 
 
-    } // .menu-item-has-children
+      } // .menu-item-has-children
+    } // @include responsive
 
 
   } // .cdr-menu

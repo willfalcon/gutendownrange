@@ -91,13 +91,51 @@ jQuery(document).ready(function($) {
     //    at index[1], a <ul> with class .sub-menu containing the child menu
     //
     // Add the caret to the <a> element html inside the <li>
-    parent.children[0].innerHTML += ' <i class="fa fa-caret-right"></i>';
+    parent.children[0].innerHTML += ' <i id=subMenuCaret' + i + ' class="fa fa-caret-right"></i>';
     // Add class 'parent' to the <li> item
     parent.classList.add('parent');
     // Add data-child attribute to the <li> item to target the correct sub-menu
     parent.setAttribute('data-child', 'sub_menu_' + i);
     // Add an id to the child <ul> sub-menu matching the data-child attr of the parent.
     parent.children[1].setAttribute('id', 'sub_menu_' + i);
+    // Get the natural height of the element and store as a data attr for later.
+    var subMenu = document.getElementById('sub_menu_' + i);
+    var height = window.getComputedStyle(subMenu)['height'];
+    // var caret = document.getElementById('subMenuCaret' + i);
+    subMenu.setAttribute('data-height', height);
+    // collapse menu only if we're mobile.
+    if (document.documentElement.clientWidth < 768) {
+      subMenu.style.height = 0;
+      subMenu.style.opacity = 0;
+      subMenu.style.display = 'none';
+      parent.children[0].setAttribute('data-index', i);
+      parent.children[0].addEventListener('click', function(event) {
+        event.preventDefault();
+        var index = this.getAttribute('data-index');
+        console.log(index);
+        var caret = document.getElementById('subMenuCaret' + index);
+        thisSubMenu = document.getElementById('sub_menu_' + index);
+        if ( thisSubMenu.classList.contains('open') ) {
+          thisSubMenu.classList.remove('open');
+          thisSubMenu.style.height = 0;
+          thisSubMenu.style.opacity = 0;
+          caret.style.transform = 'rotate(0)';
+          setTimeout(function() {
+            thisSubMenu.style.display = 'none';
+          },250);
+        } else {
+          thisSubMenu.classList.add('open');
+          thisSubMenu.style.display = 'block';
+          caret.style.transform = 'rotate(90deg)';
+          setTimeout(function() {
+            thisSubMenu.style.height = thisSubMenu.getAttribute('data-height');
+            thisSubMenu.style.opacity = 1;
+          },0);
+        }
+      });
+
+    }
+
     i++;
     // Mischief managed
   }

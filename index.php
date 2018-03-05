@@ -6,7 +6,7 @@
     <defs>
       <style>.cls-1{fill:#fff;}</style>
     </defs>
-    <title>Asset 1</title>
+    <title>Hero Image Bottom Border</title>
     <g id="Layer_2" data-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
         <path
