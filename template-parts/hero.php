@@ -1,4 +1,4 @@
-<?php while ( have_rows( 'hero' ) ) : the_row(); ?>
+
   <?php
     $hero_img = get_sub_field( 'image' );
   ?>
@@ -19,5 +19,3 @@
     </svg>
     <h1 class="hero__heading"><?php echo get_sub_field( 'heading' ) ? get_sub_field( 'heading' ) : get_the_title(); ?></h1>
   </div>
-
-<?php endwhile; ?>
