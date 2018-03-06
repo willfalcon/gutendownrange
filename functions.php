@@ -121,10 +121,10 @@
 
       if ( $params != '' ) {
         // $urlArray = array_slice($urlArray, 0, 6, true) + array( 'params' => $params ) + array_slice($urlArray, 6, count($urlArray) - 1, true);
-        $url = $cloudinary_url . '/image/fetch/' . $params . '/' . $img;
+        $url = $cloudinary_url . '/image/fetch/' . $params . ',f_auto/' . $img;
 
       } else {
-        $url = $cloudinary_url . '/image/fetch/' . $img;
+        $url = $cloudinary_url . '/image/fetch/' . 'f_auto/' . $img;
       }
 
 
