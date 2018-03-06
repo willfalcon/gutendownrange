@@ -176,9 +176,18 @@
               $img_url = get_template_directory_uri() . 'assets/img/people-placeholder.png';
               $img_alt = get_the_title();
             }
+
+            $img_args = array(
+              'transform' => array(
+                  'width'   => 300,
+              		'crop'    => 'thumb',
+              		'quality' => '80',
+              		'gravity' => 'face'
+              )
+            );
           ?>
 
-          <img class="staff-member__image" src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
+          <img class="staff-member__image" data-url="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
 
           <h3 class="staff-member__name"><?php the_title(); ?></h3>
 

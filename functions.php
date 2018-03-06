@@ -15,11 +15,14 @@
   }
 
   function cd_theme_scripts() {
-    wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', '', '', true );
+    wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', '', true );
     wp_enqueue_script( 'bootstrap_js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jquery', 'popper' ), '', true );
-    wp_enqueue_script( 'flickity_js', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array(), '', '', true );
-    wp_enqueue_script( 'lightbox_js', get_template_directory_uri() . '/assets/lightbox/js/lightbox.min.js', array( 'jquery' ), '', '', true );
+    wp_enqueue_script( 'flickity_js', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array(), '', true );
+    wp_enqueue_script( 'lightbox_js', get_template_directory_uri() . '/assets/lightbox/js/lightbox.min.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/965f271379.js' );
+    wp_enqueue_script( 'lodash', 'https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js', array(), false, true );
+    wp_enqueue_script( 'cloudinary_core', get_template_directory_uri() . '/assets/pkg-cloudinary-core/cloudinary-core.js', array(), '', true );
+    wp_enqueue_script( 'cloudinary_js', get_template_directory_uri() . '/assets/js/cloudinary.js', array( 'jquery', 'cloudinary_core' ), '', true );
     wp_enqueue_script( 'cd_js', get_template_directory_uri() . '/assets/js/cdr.js', array( 'jquery', 'flickity_js' ), '', true );
   }
 
@@ -78,7 +81,7 @@
       'page_title' => 'Site Options'
     );
 
-    acf_add_options_page( $site_options );
+    // acf_add_options_page( $site_options );
 
     function acf_load_color_field_choices($field) {
 
@@ -120,8 +123,7 @@
       $cloudinary_url = 'http://res.cloudinary.com/creative-distillery';
 
       if ( $params != '' ) {
-        // $urlArray = array_slice($urlArray, 0, 6, true) + array( 'params' => $params ) + array_slice($urlArray, 6, count($urlArray) - 1, true);
-        $url = $cloudinary_url . '/image/fetch/' . $params . ',f_auto/' . $img;
+        $url = $cloudinary_url . '/image/fetch/' . $params. '/' . $img;
 
       } else {
         $url = $cloudinary_url . '/image/fetch/' . 'f_auto/' . $img;
@@ -130,4 +132,21 @@
 
       // $url = implode('/', $urlArray);
       return $url;
+    }
+
+    function cdr_get_img_url($img, $args) {
+
+      if ( is_array($img) ) {
+        $img_url = $img['url'];
+      } else {
+        $img_url = $img;
+      }
+
+      if ( function_exists( 'cloudinary_url' ) ) {
+        $image_url = cloudinary_url( $img_url, $args );
+        return $image_url;
+      } else {
+        return $img_url;
+      }
+
     }
