@@ -1,0 +1,57 @@
+{
+  "name": "cloudinary_js",
+  "version": "2.5.0",
+  "description": "Cloudinary streamlines your web application’s image manipulation needs. Cloudinary's cloud-based servers automate image uploading, resizing, cropping, optimizing, sprite generation and more. Cloudinary's jQuery plugin allows direct uploading from the browser to the cloud and dynamic cloud-based image transformations and effects.",
+  "main": "js/jquery.cloudinary.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "pretest": "grunt lodash && grunt compile",
+    "test": "grunt karma --browsers=PhantomJS",
+    "compile-ts": "grunt ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudinary/cloudinary_js.git"
+  },
+  "author": "Cloudinary",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cloudinary/cloudinary_js/issues"
+  },
+  "homepage": "https://github.com/cloudinary/cloudinary_js",
+  "devDependencies": {
+    "blueimp-file-upload": "^9.19.1",
+    "coffee-script": "~1.10",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-coffee": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-requirejs": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-jsdoc": "^2.2.0",
+    "grunt-karma": "^2.0.0",
+    "grunt-ts": "^5.5.1",
+    "grunt-version": "^1.2.1",
+    "jasmine": "^2.5.3",
+    "jasmine-core": "~2.5",
+    "jquery": "^3.2.1",
+    "jsdom": "^9.12.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-safari-launcher": "^1.0.0",
+    "karma-story-reporter": "~0.3",
+    "lodash": "^4.17.4",
+    "lodash-cli": "^4.15.0",
+    "phantomjs-prebuilt": "^2.1.12",
+    "requirejs": "^2.3.0",
+    "typescript": "^2.5.2"
+  },
+  "dependencies": {}
+}
