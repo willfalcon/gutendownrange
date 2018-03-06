@@ -1145,6 +1145,11 @@ a:focus, button:focus, input:focus {
               -ms-flex: 0 0 33.333333%;
                   flex: 0 0 33.333333%;
           max-width: 33.333333%; } }
+      .people .staff .staff-member__image {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto; }
       .people .staff .staff-member__name {
         text-transform: uppercase;
         color: #478E41;

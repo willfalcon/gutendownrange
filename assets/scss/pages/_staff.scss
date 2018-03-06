@@ -28,6 +28,13 @@
         max-width: 33.333333%;
       }
 
+      &__image {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+      }
+
       &__name {
         text-transform: uppercase;
         color: $green;

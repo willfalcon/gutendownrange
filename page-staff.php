@@ -49,7 +49,7 @@
               }
             ?>
 
-            <img class="img-fluid" src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
+            <img class="staff-member__image" src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
 
             <h3 class="staff-member__name"><?php the_title(); ?></h3>
 
@@ -154,7 +154,7 @@
             }
           ?>
 
-          <img class="img-fluid" src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
+          <img class="staff-member__image" src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
 
           <h3 class="staff-member__name"><?php the_title(); ?></h3>
 
@@ -178,7 +178,7 @@
             }
           ?>
 
-          <img class="img-fluid" src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
+          <img class="staff-member__image" src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
 
           <h3 class="staff-member__name"><?php the_title(); ?></h3>
 
