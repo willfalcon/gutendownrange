@@ -2,7 +2,7 @@
 
   <h3 class="page-title color-white">
     <span class="line"></span>
-    <span class="text"><?php the_sub_field( 'title' ); ?></span>
+    <span class="text"><?php the_sub_field( 'heading' ); ?></span>
     <span class="line"></span>
   </h3>
 
