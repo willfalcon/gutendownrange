@@ -105,3 +105,29 @@
     }
 
     add_filter('acf/load_field/name=regular_content_background_color', 'acf_load_color_field_choices');
+
+    function cl_img($img, $params = '') {
+      // $urlArray = explode('/', $img);
+      // $file = $urlArray[7];
+
+      // $ext = substr($img, strpos($img, '.'));
+
+      // if ( $format && $format != $ext ) {
+      //   $filename = substr( $file, 0, strpos($file, '.')) . $format;
+      //   $urlArray[7] = $filename;
+      // }
+
+      $cloudinary_url = 'http://res.cloudinary.com/creative-distillery';
+
+      if ( $params != '' ) {
+        // $urlArray = array_slice($urlArray, 0, 6, true) + array( 'params' => $params ) + array_slice($urlArray, 6, count($urlArray) - 1, true);
+        $url = $cloudinary_url . '/image/fetch/' . $params . '/' . $img;
+
+      } else {
+        $url = $cloudinary_url . '/image/fetch/' . $img;
+      }
+
+
+      // $url = implode('/', $urlArray);
+      return $url;
+    }
