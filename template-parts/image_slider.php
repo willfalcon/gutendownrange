@@ -25,9 +25,9 @@
       <h2 class="image-slider__title">
         <?php the_sub_field( 'title' ); ?>
       </h2>
-      <p class="image-slider__copy">
+      <div class="image-slider__copy">
         <?php the_sub_field( 'text_area' ); ?>
-      </p>
+      </div>
       <a href="<?php echo $button['url']; ?>" class="button image-slider__button" target="<?php echo $button['target']; ?>">
         <?php echo $button['title']; ?>
       </a>

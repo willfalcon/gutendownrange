@@ -814,11 +814,12 @@ a:hover {
       z-index: 20; }
     .slider .slide__copy {
       background: rgba(13, 13, 13, 0.65);
-      color: white;
       padding: .7rem 1.5rem;
       width: 450px;
       max-width: 100%;
       z-index: 20; }
+      .slider .slide__copy * {
+        color: white; }
     .slider .slide__button {
       background: rgba(71, 142, 65, 0.3);
       color: white;
@@ -940,11 +941,12 @@ a:hover {
     z-index: 20; }
   .image-slider__copy {
     background: rgba(13, 13, 13, 0.65);
-    color: white;
     padding: .7rem 1.5rem;
     width: 450px;
     max-width: 100%;
     z-index: 20; }
+    .image-slider__copy * {
+      color: white; }
   .image-slider__button {
     background: rgba(71, 142, 65, 0.3);
     color: white;

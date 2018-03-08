@@ -20,9 +20,9 @@
         <h2 class="slide__title">
           <?php the_sub_field( 'title' ); ?>
         </h2>
-        <p class="slide__copy">
+        <div class="slide__copy">
           <?php the_sub_field( 'text_area' ); ?>
-        </p>
+        </div>
         <a href="<?php echo $button['url']; ?>" class="button slide__button" target="<?php echo $button['target']; ?>">
           <?php echo $button['title']; ?>
         </a>

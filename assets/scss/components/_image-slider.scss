@@ -53,11 +53,13 @@
   }
   &__copy {
     background: $block-background;
-    color: white;
     padding: .7rem 1.5rem;
     width: 450px;
     max-width: 100%;
     z-index: 20;
+    * {
+      color: white;
+    }
   }
   &__button {
     background: rgba($green, .3);
