@@ -1,7 +1,10 @@
 
 <?php if ( have_rows( 'slides' ) ) : ?>
 
-  <div class="slider">
+  <?php $identifier = get_sub_field( 'identifier' ); ?>
+
+
+  <div class="slider" id="sliderWrap-<?php echo $identifier; ?>">
 
     <?php while ( have_rows( 'slides' ) ) : the_row(); ?>
 
@@ -28,5 +31,25 @@
     <?php endwhile; ?>
 
   </div>
+
+  <script>
+
+    var slider = document.getElementById('sliderWrap-<?php echo $identifier; ?>');
+    var flkty = new Flickity( slider, {
+      // options
+      contain: true,
+      cellSelector: '.slide',
+      initialIndex: 0,
+      imagesLoaded: true,
+      autoPlay: 8000,
+      arrowShape: {
+        x0: 10,
+        x1: 40, y1: 30,
+        x2: 42.5, y2: 27.5,
+        x3: 15
+      }
+    });
+
+  </script>
 
 <?php endif; ?>

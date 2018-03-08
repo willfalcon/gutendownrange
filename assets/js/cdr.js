@@ -34,37 +34,7 @@ jQuery(document).ready(function($) {
     }
   };
 
-  var slider = document.querySelector('.slider');
-  var flkty = new Flickity( slider, {
-    // options
-    contain: true,
-    cellSelector: '.slide',
-    initialIndex: 0,
-    imagesLoaded: true,
-    autoPlay: 8000,
-    arrowShape: {
-      x0: 10,
-      x1: 40, y1: 30,
-      x2: 42.5, y2: 27.5,
-      x3: 15
-    }
-  });
-  var imgSlider = document.querySelector('.image-slider');
-  var flkty2 = new Flickity( imgSlider, {
-    // options
-    contain: true,
-    cellSelector: '.image-slider__image',
-    initialIndex: 0,
-    imagesLoaded: true,
-    wrapAround: true,
-    autoPlay: 5000,
-    arrowShape: {
-      x0: 10,
-      x1: 40, y1: 30,
-      x2: 42.5, y2: 27.5,
-      x3: 15
-    }
-  });
+
 
   var onLoad = document.querySelectorAll('.on-load');
   for (var item of onLoad) {

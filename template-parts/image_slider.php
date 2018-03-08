@@ -1,13 +1,12 @@
 <?php if ( get_sub_field( 'images' ) ) : ?>
 
-  <div class="image-slider">
+  <?php
+    $button = get_sub_field( 'button' );
+    $images = get_sub_field( 'images' );
+    $identifier = get_sub_field( 'identifier' ) ? get_sub_field( 'identifier' ) : get_sub_field( 'title' );
+  ?>
 
-    <?php
-      $button = get_sub_field( 'button' );
-      $images = get_sub_field( 'images' );
-      $identifier = get_sub_field( 'identifier' ) ? get_sub_field( 'identifier' ) : get_sub_field( 'title' );
-    ?>
-
+  <div class="image-slider" id="sliderWrap-<?php echo $identifier; ?>">
 
     <?php foreach ( $images as $img ) : ?>
 
@@ -35,5 +34,26 @@
     </div>
 
   </div>
+
+  <script>
+
+    var imgSlider = document.getElementById('sliderWrap-<?php echo $identifier; ?>');
+    var flkty2 = new Flickity( imgSlider, {
+      // options
+      contain: true,
+      cellSelector: '.image-slider__image',
+      initialIndex: 0,
+      imagesLoaded: true,
+      wrapAround: true,
+      autoPlay: 5000,
+      arrowShape: {
+        x0: 10,
+        x1: 40, y1: 30,
+        x2: 42.5, y2: 27.5,
+        x3: 15
+      }
+    });
+
+  </script>
 
 <?php endif; ?>
