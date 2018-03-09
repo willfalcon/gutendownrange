@@ -1,0 +1,73 @@
+.subscribe-form {
+  @include texture;
+  border: 1px solid $green-light;
+  margin: 4rem auto;
+  padding: 1rem;
+  @include responsive {
+    padding: 1rem 8rem 2.5rem;
+  }
+
+  width: $content-width;
+  max-width: 100%;
+  position: relative;
+  &__title {
+    max-width: 100%;
+    font-size: 2.6rem;
+    color: $green-light;
+    text-align: center;
+    width: 500px;
+    margin: 0 auto 1rem;
+    // position: absolute;
+    // top: -15%;
+    // background: white;
+    // left: 0;
+    // right: 0;
+  }
+  .gform_fields {
+    .gfield {
+      @include responsive {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      input, textarea {
+        color: $grey;
+        border-color: $grey;
+        &::placeholder {
+          color: $grey;
+        }
+      }
+    }
+  }
+  .gform_footer {
+    text-align: center;
+    input {
+      border: 1px solid $green-light;
+
+      // &:hover {
+      //   border: 1px solid $green-light;
+      // }
+    }
+  }
+
+  .validation_error {
+    text-align: center;
+    color: $grey;
+    font-size: 1.4rem;
+    background-color: rgba(red, .5);
+  }
+
+  .gfield_description.validation_message {
+    color: $grey;
+    font-size: 1.4rem;
+    background-color: rgba(red, .5);
+
+  }
+
+  .gform_confirmation_wrapper {
+    padding: 2rem;
+    .gform_confirmation_message {
+      color: $grey;
+      font-size: 1.4rem;
+    }
+  }
+}

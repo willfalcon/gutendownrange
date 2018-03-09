@@ -1,0 +1,14 @@
+.cta-button {
+  @include texture;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  .button {
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    color: $green;
+    border-color: $green;
+  }
+}
