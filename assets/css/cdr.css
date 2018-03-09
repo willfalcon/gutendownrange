@@ -17,7 +17,9 @@ h3 {
   font-family: "paralucent-stencil",sans-serif;
   font-style: normal;
   font-weight: 900;
-  font-size: 2.4rem; }
+  font-size: 3.6rem;
+  color: #478E41;
+  text-transform: uppercase; }
 
 h4 {
   font-family: "paralucent-stencil",sans-serif;
@@ -1073,6 +1075,24 @@ a:hover {
             -ms-flex-align: center;
                 align-items: center;
         padding: 0 1rem; } }
+
+.cta-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem 1rem; }
+  .cta-button .button {
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    color: #478E41;
+    border-color: #478E41; }
 
 .button {
   text-transform: uppercase;
