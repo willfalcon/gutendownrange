@@ -1,0 +1,47 @@
+.cta-contact-row {
+  background-color: $green-light;
+  @include texture;
+  margin: 0 -15px;
+  padding: 1rem 1.5rem;
+  @include responsive {
+    padding: 2rem 1.5rem;
+  }
+
+  &__content {
+    width: $content-width;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &__image {
+    display: none;
+    float: left;
+    margin-right: 1rem;
+    @include responsive {
+      display: inline-block;
+    }
+
+  }
+
+  &__link {
+    @include font-main;
+    font-size: 3.6rem;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    @include responsive {
+      text-align: left;
+    }
+    &:hover {
+      color: white;
+    }
+  }
+
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}

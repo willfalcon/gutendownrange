@@ -1155,6 +1155,52 @@ a:hover {
       color: #454545;
       font-size: 1.4rem; }
 
+.cta-contact-row {
+  background-color: #97AA3A;
+  background-position: top left;
+  background-size: auto;
+  background-repeat: repeat;
+  background-image: url("../img/texture.svg");
+  margin: 0 -15px;
+  padding: 1rem 1.5rem; }
+  @media (min-width: 768px) {
+    .cta-contact-row {
+      padding: 2rem 1.5rem; } }
+  .cta-contact-row__content {
+    width: 800px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 auto; }
+  .cta-contact-row__image {
+    display: none;
+    float: left;
+    margin-right: 1rem; }
+    @media (min-width: 768px) {
+      .cta-contact-row__image {
+        display: inline-block; } }
+  .cta-contact-row__link {
+    font-family: "paralucent-stencil",sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 3.6rem;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    text-transform: uppercase; }
+    @media (min-width: 768px) {
+      .cta-contact-row__link {
+        text-align: left; } }
+    .cta-contact-row__link:hover {
+      color: white; }
+  .cta-contact-row::after {
+    display: block;
+    clear: both;
+    content: ""; }
+
 .button {
   text-transform: uppercase;
   border-radius: 2px;
