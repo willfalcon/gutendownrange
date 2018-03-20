@@ -41,7 +41,7 @@ if (appForm) {
     // get the value of the age group selection (the id of the tax term)
     const termId = e.target.value;
     // get all the camp dates
-    const endpoint = '../wp-json/wp/v2/camp_dates?filter[camp_type]=' + appFor;
+    const endpoint = 'creativedistillery.com/clients/campdownrange/wp-json/wp/v2/camp_dates?filter[camp_type]=' + appFor;
     console.log(endpoint);
     fetch(endpoint)
       .then(response => response.json())
