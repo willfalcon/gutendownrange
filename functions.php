@@ -21,9 +21,13 @@
     wp_enqueue_script( 'lightbox_js', get_template_directory_uri() . '/assets/lightbox/js/lightbox.min.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/965f271379.js' );
     wp_enqueue_script( 'lodash', 'https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js', array(), false, false );
-    wp_enqueue_script( 'cloudinary_core', get_template_directory_uri() . '/assets/pkg-cloudinary-core/cloudinary-core.js', array(), '', false );
+    wp_enqueue_script( 'cloudinary_core', get_template_directory_uri() . '/node_modules/cloudinary-core/cloudinary-core.js', array(), '', false );
     wp_enqueue_script( 'cloudinary_js', get_template_directory_uri() . '/assets/js/cloudinary.js', array( 'jquery', 'cloudinary_core' ), '', true );
     wp_enqueue_script( 'cd_js', get_template_directory_uri() . '/assets/js/cdr.js', array( 'jquery', 'flickity_js' ), '', true );
+
+
+      wp_enqueue_script( 'app_form_js', get_template_directory_uri() . '/assets/js/application-form.js', array(), null, true);
+
   }
 
   /* Add Theme Supports */
@@ -149,4 +153,41 @@
         return $img_url;
       }
 
+    }
+
+
+
+
+    add_filter( 'gform_pre_render', 'populate_posts' );
+    add_filter( 'gform_pre_validation', 'populate_posts' );
+    add_filter( 'gform_pre_submission_filter', 'populate_posts' );
+    add_filter( 'gform_admin_pre_render', 'populate_posts' );
+    function populate_posts( $form ) {
+
+        foreach ( $form['fields'] as &$field ) {
+
+            if ( $field->type != 'select' || strpos( $field->cssClass, 'age-group' ) === false ) {
+                continue;
+            }
+
+            $tax_args = array(
+              'taxonomy' => 'age_group'
+            );
+            $tax_terms = get_terms($tax_args);
+
+            $choices = array();
+
+            foreach ( $tax_terms as $term ) {
+                $choices[] = array(
+                  'text' => $term->name,
+                  'value' => $term->term_id
+                );
+            }
+
+            $field->placeholder = 'Select an Age Group';
+            $field->choices = $choices;
+
+        }
+
+        return $form;
     }

@@ -1,0 +1,163 @@
+.application-form {
+
+  @extend .subscribe-form;
+  &__title {
+    color: $green;
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .gsection_title {
+    text-align: center;
+    font-size: 2.6rem;
+    margin: 1rem 0;
+  }
+
+  .gsection {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .gform_fields {
+    .gfield {
+      flex: 0 0 100%;
+      max-width: 100%;
+      .gfield_label {
+        display: initial;
+        margin: 0;
+      }
+      .ginput_container_name {
+        label {
+          display: initial;
+        }
+      }
+
+      .gf_name_has_2 {
+        display: flex;
+        flex-flow: row wrap;
+        > span {
+          flex: 0 0 50%;
+          max-width: 50%;
+          &:first-child {
+            padding-right: .5rem;
+          }
+          &:last-child {
+            padding-left: .5rem;
+          }
+        }
+      }
+
+      .name_first,
+      .name_last {
+        label {
+          font-size: 1.4rem;
+        }
+      }
+
+      .ginput_container_address {
+        label {
+          font-size: 1.4rem;
+        }
+      }
+
+      .gfield_radio {
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+        padding: 0;
+        li {
+          margin: 0 .5rem;
+          display: block;
+          input {
+            width: auto;
+            vertical-align: middle;
+          }
+          label {
+            margin-left: 1rem;
+            vertical-align: middle;
+          }
+        }
+      }
+
+
+      .ui-sortable {
+        .gfield_list_icons {
+          display: none;
+        }
+      }
+
+      strong {
+        color: $green;
+        font-size: 2rem;
+      }
+
+      &.bold {
+        label {
+          font-weight: bold;
+          font-size: 2rem;
+          color: $green;
+        }
+      }
+    } // .gfield
+
+
+  }
+
+  .gform_page_footer {
+    display: flex;
+    justify-content: space-between;
+    input {
+      color: $green;
+      border: 1px solid $green;
+      &:hover {
+        cursor: pointer;
+        background-color: $green;
+        color: white;
+      }
+    }
+  }
+  .gform_body {
+    .gform_page:first-child {
+      .gform_page_footer {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .household-income {
+    text-align: center;
+    .instruction {
+      display: none;
+    }
+    .income-field {
+      border: 0;
+      color: $green !important;
+      font-size: 2rem !important;
+      text-align: center;
+    }
+    .income-slider {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .cost {
+    text-align: center;
+    .instruction {
+      display: none;
+    }
+    input {
+      border: 0 !important;
+      color: $green !important;
+      font-size: 2rem !important;
+      text-align: center;
+    }
+  }
+  .gfield_list_container {
+    width: 50%;
+  }
+  .gform_confirmation_message {
+    text-align: center;
+  }
+
+} //.application-form

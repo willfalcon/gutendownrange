@@ -2,8 +2,8 @@
 
   .top {
     @include background-image;
-    background-image: url("../img/home-top.jpg");
-    // height: 300px;
+    background-image: url("../assets/img/home-top.jpg");
+
     margin: 0 -15px;
     padding: 2rem;
     display: flex;
@@ -16,7 +16,7 @@
       background: $block-background;
       width: 450px;
       max-width: 100%;
-      // margin: 0 3rem;
+       
       padding: 1rem 2rem;
       p {
         font-size: 2.6rem;
