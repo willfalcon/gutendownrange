@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
   <?php $contact = get_field( 'contact_info', 'option' ); ?>
   <?php $bg_img = get_field( 'background_image' ); ?>
 
@@ -15,61 +14,26 @@
       </h1>
 
       <div class="contact-form">
-        <?php gravity_form( 2, $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false,'' , $echo = true ); ?>
+        <?php gravity_form( get_field( 'contact_form' ), $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false,'' , $echo = true ); ?>
         <script>
           jQuery(document).ready(function() {
             document.querySelector('.ginput_container_name input').setAttribute('autocomplete', 'name');
             document.querySelector('.ginput_container_email input').setAttribute('autocomplete', 'email');
-
-
           });
-
         </script>
       </div>
 
       <div class="contact-info">
 
         <h5>Mailing Address</h5>
-        <?php if ( $contact['mailing_address']['address'] ) : ?>
-          <p><?php echo $contact['mailing_address']['address']; ?></p>
-        <?php endif; ?>
-        <?php if ( $contact['mailing_address']['address_2'] ) : ?>
-          <p><?php echo $contact['mailing_address']['address_2']; ?></p>
-        <?php endif; ?>
-        <?php if ( $contact['mailing_address']['city'] || $contact['mailing_address']['state'] || $contact['mailing_address']['zip'] ) : ?>
-          <p>
-            <?php if ( $contact['mailing_address']['city'] ) : ?>
-              <?php echo $contact['mailing_address']['city']; ?>,
-            <?php endif; ?>
-            <?php if ( $contact['mailing_address']['state'] ) : ?>
-              <?php echo $contact['mailing_address']['state']; ?>
-            <?php endif; ?>
-            <?php if ( $contact['mailing_address']['zip'] ) : ?>
-              <?php echo $contact['mailing_address']['zip']; ?>
-            <?php endif; ?>
-          </p>
-        <?php endif; ?>
+        <?php $mailing_address = get_field( 'mailing_address', 'options' ); ?>
+        <p><?php echo $mailing_address['address']; ?></p>
+        <p><?php echo $mailing_address['city_state_zip']; ?></p>
 
         <h5 class="mt-4">Physical Address</h5>
-        <?php if ( $contact['physical_address']['address'] ) : ?>
-          <p><?php echo $contact['physical_address']['address']; ?></p>
-        <?php endif; ?>
-        <?php if ( $contact['physical_address']['address_2'] ) : ?>
-          <p><?php echo $contact['physical_address']['address_2']; ?></p>
-        <?php endif; ?>
-        <?php if ( $contact['physical_address']['city'] || $contact['physical_address']['state'] || $contact['physical_address']['zip'] ) : ?>
-          <p>
-            <?php if ( $contact['physical_address']['city'] ) : ?>
-              <?php echo $contact['physical_address']['city']; ?>,
-            <?php endif; ?>
-            <?php if ( $contact['physical_address']['state'] ) : ?>
-              <?php echo $contact['physical_address']['state']; ?>
-            <?php endif; ?>
-            <?php if ( $contact['physical_address']['zip'] ) : ?>
-              <?php echo $contact['physical_address']['zip']; ?>
-            <?php endif; ?>
-          </p>
-        <?php endif; ?>
+        <?php $address = get_field( 'physical_address', 'options' ); ?>
+        <p><?php echo $address['address']; ?></p>
+        <p><?php echo $address['city_state_zip']; ?></p>
 
 
       </div>

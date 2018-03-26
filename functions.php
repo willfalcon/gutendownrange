@@ -45,6 +45,31 @@
     }
     add_action( 'init', 'register_theme_menus' );
 
+    /* Theme Options Pages */
+    if( function_exists('acf_add_options_page') ) {
+
+      $options_setup = array(
+        'menu_title' => 'Site Options',
+        'menu_slug' => 'cdr-options',
+      );
+      $main_options = array(
+        'menu_title' => 'Main Options',
+        'page_title' => 'Camp Down Range Options',
+        'parent_slug' => 'cdr-options'
+      );
+      $contact_info_options = array(
+        'menu_title' => 'Contact Info',
+        'page_title' => 'Contact Info',
+        'parent_slug' => 'cdr-options'
+      );
+
+
+    	acf_add_options_page( $options_setup );
+      acf_add_options_sub_page( $main_options );
+      acf_add_options_sub_page( $contact_info_options );
+
+    }
+
     /* Add .nav-item to li elements in navbar */
 
     function cd_excerpt_more( $more ) {

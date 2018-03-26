@@ -4,20 +4,16 @@
 
   $variation = get_sub_field( 'variation' );
 
-  if ( $variation == 'donate_on_top' ) {
-
-    get_template_part( 'template-parts/support', 'donate' );
-    echo '<!-- triggered support-donate.php -->';
-
-  } elseif ( $variation == 'sponsors_on_top' ) {
+  if ( $variation == 'sponsors_on_top' ) {
 
     get_template_part( 'template-parts/support', 'sponsors' );
     echo '<!-- triggered support-sponsors.php -->';
 
-  } elseif ( $variation == 'extended' ) {
+  } else {
 
-    get_template_part( 'support', 'extended' );
-
+    get_template_part( 'template-parts/support', 'donate' );
+    echo '<!-- triggered support-donate.php -->';
+    
   }
 
 ?>

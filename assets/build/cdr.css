@@ -655,7 +655,7 @@ a:hover {
       .sponsors__list li.nobullet:after {
         content: none; }
   .sponsors--top {
-    margin: 1rem -15px -3rem;
+    margin: 0 -15px -3rem;
     padding: 2rem 1rem 7rem; }
     @media (min-width: 768px) {
       .sponsors--top {
