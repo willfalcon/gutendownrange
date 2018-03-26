@@ -2,8 +2,9 @@
 
 
   <?php $contact = get_field( 'contact_info', 'option' ); ?>
+  <?php $bg_img = get_field( 'background_image' ); ?>
 
-  <div class="contact-bg">
+  <div class="contact-bg" style="background-image: url(<?php echo $bg_img['sizes']['large']; ?>);">
 
     <div class="contact-box">
 

@@ -145,21 +145,26 @@ function isInViewport(el) {
 
 var slideDown = document.querySelectorAll('.slide-down');
 var slideRight = document.querySelectorAll('.slide-right');
-window.addEventListener('scroll', function(event) {
 
-  for (var item of slideDown) {
+function tryToSlide() {
+
+  slideDown.forEach(item => {
     if (isInViewport(item)) {
       item.classList.add('show');
     }
-  }
+  });
 
-  for (var item of slideRight) {
+  slideRight.forEach(item => {
     if (isInViewport(item)) {
       item.classList.add('show');
     }
-  }
+  });
 
-}, false);
+}
+
+window.addEventListener('scroll', tryToSlide, false);
+
+tryToSlide();
 
 window.addEventListener('resize', processBullets, false);
 

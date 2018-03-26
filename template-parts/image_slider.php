@@ -35,25 +35,4 @@
 
   </div>
 
-  <script>
-
-    var imgSlider = document.getElementById('sliderWrap-<?php echo $identifier; ?>');
-    var flkty2 = new Flickity( imgSlider, {
-      // options
-      contain: true,
-      cellSelector: '.image-slider__image',
-      initialIndex: 0,
-      imagesLoaded: true,
-      wrapAround: true,
-      autoPlay: 5000,
-      arrowShape: {
-        x0: 10,
-        x1: 40, y1: 30,
-        x2: 42.5, y2: 27.5,
-        x3: 15
-      }
-    });
-
-  </script>
-
 <?php endif; ?>

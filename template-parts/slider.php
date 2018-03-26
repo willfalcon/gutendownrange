@@ -32,24 +32,4 @@
 
   </div>
 
-  <script>
-
-    var slider = document.getElementById('sliderWrap-<?php echo $identifier; ?>');
-    var flkty = new Flickity( slider, {
-      // options
-      contain: true,
-      cellSelector: '.slide',
-      initialIndex: 0,
-      imagesLoaded: true,
-      autoPlay: 8000,
-      arrowShape: {
-        x0: 10,
-        x1: 40, y1: 30,
-        x2: 42.5, y2: 27.5,
-        x3: 15
-      }
-    });
-
-  </script>
-
 <?php endif; ?>
