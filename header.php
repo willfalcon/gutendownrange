@@ -71,7 +71,7 @@
           <?php
             $support_color = wp_is_mobile() ? '#FFFFFF' : '#478E41';
           ?>
-          <a class="support-button" href="#">
+          <a class="support-button" target="_blank" href="https://paypal.me/campdownrange">
 
             <svg width="180px" height="60px" viewBox="0 0 180 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
@@ -100,5 +100,7 @@
         </div>
       </div>
     </nav>
+
+  <?php get_template_part( 'template-parts/alerts' ); ?>
 
   <div class="container-fluid">

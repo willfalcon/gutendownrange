@@ -1,0 +1,64 @@
+.alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  padding: 1rem;
+  width: 95%;
+  max-width: 100%;
+  margin: 0 auto 1rem;
+  transition: all .25s;
+
+  background-color: $green;
+  @include texture;
+
+  @include responsive {
+    padding: 1rem 0;
+  }
+
+
+  &__message {
+    font-size: 2rem;
+    color: white;
+  }
+  &__button {
+    @extend .button;
+    padding: .5rem;
+    color: white;
+    border-color: white;
+    margin: 0 1rem .5rem;
+    @media (max-width: $break - 1) {
+      margin-right: 50px;
+    }
+    @include font-main;
+    text-transform: uppercase;
+    &:hover {
+      background-color: white;
+      color: $green;
+    }
+  }
+  &__dismiss {
+    position: absolute;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+
+    font-size: 3rem;
+
+    background-color: transparent;
+    border: 0;
+
+    @include responsive {
+      right: 40px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      outline-style: none;
+    }
+  }
+}

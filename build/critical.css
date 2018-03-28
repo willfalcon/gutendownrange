@@ -165,6 +165,8 @@ a:hover {
 
 .cdr-navbar__toggler {
   display: block;
+  background: transparent;
+  border: 0px;
   height: 41px;
   width: 41px;
   padding: 0;

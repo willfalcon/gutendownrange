@@ -1,3 +1,4 @@
+@import 'buttons';
 @import 'hero';
 @import 'donate';
 @import 'sponsors';
@@ -11,29 +12,9 @@
 @import 'subscribe-form';
 @import 'cta-contact-row';
 @import 'application-form';
+@import 'alert';
 
 
-.button {
-  text-transform: uppercase;
-  border-radius: 2px;
-  font-size: 2rem;
-  padding: 1rem 2rem;
-
-  border: 1px solid;
-  margin: 1rem 0;
-  @include font-main;
-  display: inline-block;
-  transition: all .25s;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-a, button, input {
-  &:focus {
-    outline: rgba($green-dark, .3) auto 5px;
-  }
-}
 
 .page-title {
   text-align: center;

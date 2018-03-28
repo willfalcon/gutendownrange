@@ -138,6 +138,7 @@
     }
 
     add_filter('acf/load_field/name=regular_content_background_color', 'acf_load_color_field_choices');
+    add_filter('acf/load_field/name=background_color', 'acf_load_color_field_choices');
 
     function cl_img($img, $params = '') {
       // $urlArray = explode('/', $img);
