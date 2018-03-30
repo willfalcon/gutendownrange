@@ -8,14 +8,23 @@ module.exports = () => {
   images.forEach((image) => {
     const url = image.getAttribute('data-url');
     const format = image.getAttribute('data-format') || 'auto';
+    const mask = image.getAttribute('data-mask') ? {
+      overlay: 'circle-mask-2',
+      width: 300
+    } : '';
     if (url) {
       image.src = cl.url(url,
         {
           transformation: [
-            {width: 300, gravity: 'face', crop: 'thumb'},
-            {overlay: 'circle-mask-2', width: 300}
+            {
+              width: 300,
+              gravity: 'face',
+              crop: 'thumb',
+              radius: 'max'
+            },
+            mask
           ],
-          fetchFormat: format,
+          format: format,
           type: 'fetch'
         }
       );
