@@ -95,3 +95,43 @@
     font-size: 1.4rem;
   }
 }
+
+.ui-widget {
+  background-color: $green;
+  padding: .5rem;
+  max-width: 100%;
+  width: 300px;
+  .ui-datepicker-header {
+    display: flex;
+    .ui-datepicker-prev {
+      order: 1;
+      // flex: ;
+      color: white;
+    }
+    .ui-datepicker-next {
+      order: 3;
+      // flex: 1;
+      text-align: right;
+      color: white;
+    }
+    .ui-datepicker-title {
+      order: 2;
+      flex: 1;
+      text-align: center;
+      select {
+        font-size: 1.4rem;
+        // padding: .5rem;
+      }
+    }
+  }
+  .ui-datepicker-calendar {
+    width: 100%;
+    color: white;
+    td a {
+      color: white;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
