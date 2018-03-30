@@ -29,7 +29,7 @@
     <?php endif; ?>
 
   </div>
-
+<!--
 <script type="text/javascript">
   var clTestimonial = new cloudinary.Cloudinary({cloud_name: "creative-distillery", secure: true});
 
@@ -50,6 +50,6 @@
     );
   }
 
-</script>
+</script> -->
 
 </section>

@@ -49,7 +49,7 @@
               }
             ?>
 
-            <img class="staff-member__image" src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
+            <img class="staff-member__image" data-url="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
 
             <h3 class="staff-member__name"><?php the_title(); ?></h3>
 
@@ -72,7 +72,7 @@
 
                   <div class="staff-modal__detail">
 
-                    <img class="img-fluid" src="<?php echo $img_url_modal; ?>" alt="<?php echo $img_alt; ?>" />
+                    <img class="img-fluid" data-url="<?php echo $img_url_modal; ?>" alt="<?php echo $img_alt; ?>" />
 
                     <h3 class="staff-member__name"><?php the_title(); ?></h3>
 
@@ -154,7 +154,7 @@
             }
           ?>
 
-          <img class="staff-member__image" src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
+          <img class="staff-member__image" <?php echo get_field( 'image' ) ? 'data-url' : 'src'; ?>="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
 
           <h3 class="staff-member__name"><?php the_title(); ?></h3>
 
@@ -187,7 +187,7 @@
             );
           ?>
 
-          <img class="staff-member__image" data-url="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
+          <img class="staff-member__image" <?php echo get_field( 'image' ) ? 'data-url' : 'src'; ?>="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
 
           <h3 class="staff-member__name"><?php the_title(); ?></h3>
 
