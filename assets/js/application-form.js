@@ -28,39 +28,41 @@ module.exports = () => {
   if (appForm) {
     const ageGroupField = document.querySelector('.gfield.age-group .gfield_select');
     const appFor = appForm.dataset.appFor;
-    ageGroupField.addEventListener('change', e => {
-      console.log(e);
-      // remove any existing campDate rows, except one, since we need it to make the new ones
-      const datesElem = document.querySelector('tbody.ui-sortable');
-      const allDateRows = datesElem.querySelectorAll('tr:not(:last-child)');
-      allDateRows.forEach(dateRow => datesElem.removeChild(dateRow));
-      // remove this one's value so it'll be removed later
-      const lastDateRowStanding = datesElem.querySelector('tr');
-      lastDateRowStanding.querySelector('input').value = "";
+    if (ageGroupField) {
+      ageGroupField.addEventListener('change', e => {
+        console.log(e);
+        // remove any existing campDate rows, except one, since we need it to make the new ones
+        const datesElem = document.querySelector('tbody.ui-sortable');
+        const allDateRows = datesElem.querySelectorAll('tr:not(:last-child)');
+        allDateRows.forEach(dateRow => datesElem.removeChild(dateRow));
+        // remove this one's value so it'll be removed later
+        const lastDateRowStanding = datesElem.querySelector('tr');
+        lastDateRowStanding.querySelector('input').value = "";
 
-      // get the value of the age group selection (the id of the tax term)
-      const termId = e.target.value;
-      // get all the camp dates
-      const endpoint = 'http://www.creativedistillery.com/clients/campdownrange/wp-json/wp/v2/camp_dates?filter[camp_type]=' + appFor;
-      console.log(endpoint);
-      fetch(endpoint)
-        .then(response => response.json())
-        .then(campDates => {
+        // get the value of the age group selection (the id of the tax term)
+        const termId = e.target.value;
+        // get all the camp dates
+        const endpoint = 'http://www.camp-down-range.org/wp-json/wp/v2/camp_dates?filter[camp_type]=' + appFor;
+        console.log(endpoint);
+        fetch(endpoint)
+          .then(response => response.json())
+          .then(campDates => {
 
-          campDates.forEach(date => {
-            console.log(date);
-            // if the camp date includes the age group that was selected, show it
-            date.age_group.forEach(groupId => {
-              if (groupId == termId) {
-                addRow(date);
-              }
+            campDates.forEach(date => {
+              console.log(date);
+              // if the camp date includes the age group that was selected, show it
+              date.age_group.forEach(groupId => {
+                if (groupId == termId) {
+                  addRow(date);
+                }
+              });
+
             });
 
-          });
+        });
 
       });
-
-    });
+    }
 
     function numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -77,7 +79,7 @@ module.exports = () => {
       incomeSlider.setAttribute('id', 'incomeSlider');
       incomeSlider.classList.add('income-slider');
       incomeSlider.setAttribute('min', '40000');
-      incomeSlider.setAttribute('max', '80000');
+      incomeSlider.setAttribute('max', '150000');
       incomeSlider.setAttribute('step', '1000');
       incomeSlider.setAttribute('value', '40000');
       // Insert the slider.
@@ -92,16 +94,20 @@ module.exports = () => {
       // Get the cost field.
       const costField = document.querySelector('.gfield.cost .ginput_container_number input');
 
+      costField.setAttribute('readonly', 'true');
+
       function updateCost() {
         let cost;
         if (incomeSlider.value < 50000) {
           cost = 50;
-        } else if (incomeSlider.value < 60000 && incomeSlider.value >= 50000) {
-          cost = 100;
-        } else if (incomeSlider.value < 80000 && incomeSlider.value >= 60000) {
+        } else if (incomeSlider.value < 75000 && incomeSlider.value >= 50000) {
           cost = 150;
-        } else if (incomeSlider.value >= 80000) {
-          cost = 200;
+        } else if (incomeSlider.value < 100000 && incomeSlider.value >= 75000) {
+          cost = 250;
+        } else if (incomeSlider.value < 125000 && incomeSlider.value >= 100000) {
+          cost = 350;
+        } else if (incomeSlider.value >= 125000) {
+          cost = 450;
         }
         costField.value = '$' + cost.toString();
       }

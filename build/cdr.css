@@ -2042,6 +2042,14 @@ a:focus, button:focus, input:focus {
 .gform_fields .gfield .ginput_container_name label {
   display: none;
 }
+.gform_fields .gfield .gfield_checkbox {
+  list-style: none;
+  padding: 0;
+}
+.gform_fields .gfield .gfield_checkbox input {
+  vertical-align: middle;
+  width: auto;
+}
 .gform_fields .gfield input, .gform_fields .gfield textarea {
   background: transparent;
   color: white;

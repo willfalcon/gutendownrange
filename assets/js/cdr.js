@@ -2,14 +2,17 @@ const navbar = require('./navbar.js');
 const navbarDropdown = require('./navbarDropdown.js');
 const processBullets = require('./processBullets.js');
 const appForm = require('./application-form.js');
+const sliders = require('./sliders.js');
+const images = require('./images.js');
 
 navbar();
 navbarDropdown();
 processBullets();
 appForm();
+sliders();
+images();
 
 window.addEventListener('resize', processBullets, false);
-
 
 function isInViewport(el) {
 
@@ -130,7 +133,9 @@ function getCookie(cname) {
 
 
   // ALERT BAR FUNCTIONALITY //
+  if (document.querySelector('.alert')) {
     checkCookie();
+  }
   // When the alert bar is activated, we only want users to have to dismiss it once,
   // so when it's dismissed, we set a very simple cookie that expires in 24 hours.
   // ('alertClosed=true')

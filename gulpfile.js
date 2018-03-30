@@ -25,6 +25,7 @@ const postcss = require('gulp-postcss');
   //  - Includes sourcemaps and doesn't minify.
 gulp.task('dev_styles', () => {
   return sass('assets/scss/cdr.scss', { sourcemap: true, style: 'expanded' })
+    .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('build'))
 });
@@ -91,7 +92,7 @@ gulp.task('scripts', () => {
         // 4) Save that one
       .pipe(gulp.dest('./build/'))
         // 5) Minimize
-      // .pipe(uglify())
+      .pipe(uglify())
         // 6) Add min suffix
         .pipe(rename({suffix: '.min'}))
       // 7) Write sourcemaps.
