@@ -290,10 +290,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
       images.forEach(function (image) {
         var url = image.getAttribute('data-url');
+        var format = image.getAttribute('data-format') || 'auto';
         if (url) {
           image.src = cl.url(url, {
             transformation: [{ width: 300, gravity: 'face', crop: 'thumb' }, { overlay: 'circle-mask-2', width: 300 }],
-            fetchFormat: 'auto',
+            fetchFormat: format,
             type: 'fetch'
           });
         }
