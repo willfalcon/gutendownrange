@@ -12,6 +12,7 @@ module.exports = () => {
       overlay: 'circle-mask-2',
       width: 300
     } : '';
+    const radius = image.getAttribute('data-mask') ? '' : 'max';
     if (url) {
       image.src = cl.url(url,
         {
@@ -20,7 +21,7 @@ module.exports = () => {
               width: 300,
               gravity: 'face',
               crop: 'thumb',
-              radius: 'max'
+              radius
             },
             mask
           ],

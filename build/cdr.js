@@ -295,13 +295,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           overlay: 'circle-mask-2',
           width: 300
         } : '';
+        var radius = image.getAttribute('data-mask') ? '' : 'max';
         if (url) {
           image.src = cl.url(url, {
             transformation: [{
               width: 300,
               gravity: 'face',
               crop: 'thumb',
-              radius: 'max'
+              radius: radius
             }, mask],
             format: format,
             type: 'fetch'
