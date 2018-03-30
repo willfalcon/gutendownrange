@@ -28,7 +28,7 @@ h4 {
   @include font-main {
     font-size: 2.6rem;
     color: $green;
-  
+
   }
 }
 
@@ -52,8 +52,11 @@ a, p, li {
   color: $grey;
 }
 
-a:hover {
+a {
   color: $green;
+  &:hover {
+    color: darken($green, 12%);
+  }
 }
 
 .font-main {

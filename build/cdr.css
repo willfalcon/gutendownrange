@@ -53,8 +53,11 @@ a, p, li {
   color: #454545;
 }
 
-a:hover {
+a {
   color: #478E41;
+}
+a:hover {
+  color: #32642e;
 }
 
 .font-main {
@@ -1431,6 +1434,7 @@ a:focus, button:focus, input:focus {
 }
 .cta-contact-row__content {
   width: 800px;
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
