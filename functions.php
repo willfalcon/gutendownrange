@@ -6,7 +6,7 @@
   add_action( 'wp_enqueue_scripts', 'cd_theme_scripts' );
 
   function cd_theme_styles() {
-    wp_enqueue_style( 'default_styles', get_template_directory_uri() . '/style.css' );
+    // wp_enqueue_style( 'default_styles', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'boostrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' );
     wp_enqueue_style( 'flickity_css', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
     wp_enqueue_style( 'lightbox_css', get_template_directory_uri() . '/assets/lightbox/css/lightbox.min.css' );
@@ -217,3 +217,7 @@
 
         return $form;
     }
+
+
+    // Disables tabindex attribute on all forms.
+    add_filter( 'gform_tabindex', '__return_false' );

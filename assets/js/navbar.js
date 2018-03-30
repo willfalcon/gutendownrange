@@ -18,6 +18,16 @@ module.exports = () => {
       toggleBL.setAttribute('fill', '#478E41');
       logoLight.style.opacity = '0';
       logoDark.style.opacity = '1';
+      const currentlyOpen = document.querySelector('.sub-menu.open');
+      if (currentlyOpen) {
+        currentlyOpen.classList.remove('open');
+        currentlyOpen.style.height = 0;
+        currentlyOpen.style.opacity = 0;
+        currentlyOpen.parentNode.querySelector('i.fa').style.transform = 'rotate(0)';
+        setTimeout(function() {
+          currentlyOpen.style.display = 'none';
+        },250);
+      }
     } else {
       nav.style.transform = 'translateY(0)';
       toggler.classList.add('open');

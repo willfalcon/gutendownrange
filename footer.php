@@ -14,22 +14,22 @@
           <?php while ( have_rows( 'social_media', 'options' ) ) : the_row(); ?>
             <?php if ( get_sub_field( 'facebook' ) ) : ?>
               <a href="<?php the_sub_field( 'facebook' ); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer-fb.svg" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer-fb.svg" alt="Link to Camp Down Range Facebook page."/>
               </a>
             <?php endif; ?>
             <?php if ( get_sub_field( 'twitter' ) ) : ?>
               <a href="<?php the_sub_field( 'twitter' ); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer-tw.svg" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer-tw.svg" alt="Link to Camp Down Range Twitter page."/>
               </a>
             <?php endif; ?>
             <?php if ( get_sub_field( 'instagram' ) ) : ?>
               <a href="<?php the_sub_field( 'instagram' ); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer-ig.svg" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer-ig.svg" alt="Link to Camp Down Range Instagram feed."/>
               </a>
             <?php endif; ?>
             <?php if ( get_sub_field( 'youtube' ) ) : ?>
               <a href="<?php the_sub_field( 'youtube' ); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer-yt.svg" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer-yt.svg" alt="Link to Camp Down Range Youtube channel."/>
               </a>
             <?php endif; ?>
           <?php endwhile; ?>

@@ -331,6 +331,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           toggleBL.setAttribute('fill', '#478E41');
           logoLight.style.opacity = '0';
           logoDark.style.opacity = '1';
+          var currentlyOpen = document.querySelector('.sub-menu.open');
+          if (currentlyOpen) {
+            currentlyOpen.classList.remove('open');
+            currentlyOpen.style.height = 0;
+            currentlyOpen.style.opacity = 0;
+            currentlyOpen.parentNode.querySelector('i.fa').style.transform = 'rotate(0)';
+            setTimeout(function () {
+              currentlyOpen.style.display = 'none';
+            }, 250);
+          }
         } else {
           nav.style.transform = 'translateY(0)';
           toggler.classList.add('open');
@@ -384,9 +394,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           childMenu.style.display = 'none';
           childLink.setAttribute('data-index', i);
           childLink.addEventListener('click', function (e) {
-            e.preventDefault();
             var index = this.getAttribute('data-index');
-
             var caret = childLink.querySelector('i');
             if (childMenu.classList.contains('open')) {
               childMenu.classList.remove('open');
@@ -397,6 +405,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 childMenu.style.display = 'none';
               }, 250);
             } else {
+              e.preventDefault();
+              var currentlyOpen = document.querySelector('.sub-menu.open');
+              if (currentlyOpen) {
+                currentlyOpen.classList.remove('open');
+                currentlyOpen.style.height = 0;
+                currentlyOpen.style.opacity = 0;
+                currentlyOpen.parentNode.querySelector('i.fa').style.transform = 'rotate(0)';
+                setTimeout(function () {
+                  currentlyOpen.style.display = 'none';
+                }, 250);
+              }
               childMenu.classList.add('open');
               childMenu.style.display = 'block';
               caret.style.transform = 'rotate(90deg)';

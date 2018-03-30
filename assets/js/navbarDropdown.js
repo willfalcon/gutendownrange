@@ -38,9 +38,7 @@ module.exports = () => {
         childMenu.style.display = 'none';
         childLink.setAttribute('data-index', i);
         childLink.addEventListener('click', function(e) {
-          e.preventDefault();
           const index = this.getAttribute('data-index');
-          
           const caret = childLink.querySelector('i');
           if ( childMenu.classList.contains('open') ) {
             childMenu.classList.remove('open');
@@ -51,6 +49,17 @@ module.exports = () => {
               childMenu.style.display = 'none';
             },250);
           } else {
+            e.preventDefault();
+            const currentlyOpen = document.querySelector('.sub-menu.open');
+            if (currentlyOpen) {
+              currentlyOpen.classList.remove('open');
+              currentlyOpen.style.height = 0;
+              currentlyOpen.style.opacity = 0;
+              currentlyOpen.parentNode.querySelector('i.fa').style.transform = 'rotate(0)';
+              setTimeout(function() {
+                currentlyOpen.style.display = 'none';
+              },250);
+            }
             childMenu.classList.add('open');
             childMenu.style.display = 'block';
             caret.style.transform = 'rotate(90deg)';
@@ -58,6 +67,7 @@ module.exports = () => {
               childMenu.style.height = childMenu.getAttribute('data-height');
               childMenu.style.opacity = 1;
             },0);
+
           }
         });
 
