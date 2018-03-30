@@ -16,7 +16,7 @@
 
     <?php $img = get_sub_field( 'photo' ); ?>
     <?php if ( $img ) : ?>
-      <img class="testimonial__source-image" data-url="<?php echo $img['url']; ?>" src="<?php echo $img['sizes']['medium']; ?>" alt="<?php echo $img['alt']; ?>" />
+      <img class="testimonial__source-image" data-url="<?php echo $img['url']; ?>" data-format="png" src="<?php echo $img['sizes']['medium']; ?>" alt="<?php echo $img['alt']; ?>" />
     <?php endif; ?>
     <?php if ( get_sub_field( 'under_photo_content' ) ) : ?>
       <?php the_sub_field( 'under_photo_content' ); ?>
@@ -29,7 +29,7 @@
     <?php endif; ?>
 
   </div>
-
+<!--
 <script type="text/javascript">
   var clTestimonial = new cloudinary.Cloudinary({cloud_name: "creative-distillery", secure: true});
 
@@ -50,6 +50,6 @@
     );
   }
 
-</script>
+</script> -->
 
 </section>

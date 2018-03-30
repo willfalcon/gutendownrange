@@ -21,7 +21,7 @@
       	)
       );
 
-      $staff_query = new WP_Query( $staff_args);
+      $staff_query = new WP_Query( $staff_args );
 
     ?>
 
@@ -49,7 +49,7 @@
               }
             ?>
 
-            <img class="staff-member__image" src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
+            <img class="staff-member__image" data-url="<?php echo $img_url; ?>" data-mask="true" alt="<?php echo $img_alt; ?>" />
 
             <h3 class="staff-member__name"><?php the_title(); ?></h3>
 
@@ -72,7 +72,7 @@
 
                   <div class="staff-modal__detail">
 
-                    <img class="img-fluid" src="<?php echo $img_url_modal; ?>" alt="<?php echo $img_alt; ?>" />
+                    <img class="img-fluid" data-url="<?php echo $img_url_modal; ?>" data-mask="true" alt="<?php echo $img_alt; ?>" />
 
                     <h3 class="staff-member__name"><?php the_title(); ?></h3>
 
@@ -119,7 +119,7 @@
       	)
       );
 
-      $volunteer_query = new WP_Query( $volunteer_args);
+      $volunteer_query = new WP_Query( $volunteer_args );
 
       $other_args = array(
         'post_type' => 'people',
@@ -132,7 +132,7 @@
       	)
       );
 
-      $other_query = new WP_Query( $other_args);
+      $other_query = new WP_Query( $other_args );
 
     ?>
 
@@ -154,7 +154,7 @@
             }
           ?>
 
-          <img class="staff-member__image" src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
+          <img class="staff-member__image" <?php echo get_field( 'image' ) ? 'data-url' : 'src'; ?>="<?php echo $img_url; ?>" data-mask="true" alt="<?php echo $img_alt; ?>" />
 
           <h3 class="staff-member__name"><?php the_title(); ?></h3>
 
@@ -177,17 +177,9 @@
               $img_alt = get_the_title();
             }
 
-            $img_args = array(
-              'transform' => array(
-                  'width'   => 300,
-              		'crop'    => 'thumb',
-              		'quality' => '80',
-              		'gravity' => 'face'
-              )
-            );
           ?>
 
-          <img class="staff-member__image" data-url="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
+          <img class="staff-member__image" <?php echo get_field( 'image' ) ? 'data-url' : 'src'; ?>="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
 
           <h3 class="staff-member__name"><?php the_title(); ?></h3>
 

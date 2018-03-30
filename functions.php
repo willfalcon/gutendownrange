@@ -11,7 +11,7 @@
     wp_enqueue_style( 'flickity_css', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
     wp_enqueue_style( 'lightbox_css', get_template_directory_uri() . '/assets/lightbox/css/lightbox.min.css' );
     wp_enqueue_style( 'typekit_css', 'https://use.typekit.net/cny5mzk.css' );
-    wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/build/cdr.css' );
+    wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/build/cdr.min.css' );
   }
 
   function cd_theme_scripts() {
@@ -20,11 +20,10 @@
     wp_enqueue_script( 'flickity_js', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array(), '', false );
     wp_enqueue_script( 'lightbox_js', get_template_directory_uri() . '/assets/lightbox/js/lightbox.min.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/965f271379.js' );
-    wp_enqueue_script( 'lodash', 'https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js', array(), false, false );
-    wp_enqueue_script( 'cloudinary_core', get_template_directory_uri() . '/node_modules/cloudinary-core/cloudinary-core.js', array(), '', false );
-    wp_enqueue_script( 'cloudinary_js', get_template_directory_uri() . '/assets/js/cloudinary.js', array( 'jquery', 'cloudinary_core' ), '', true );
+    // wp_enqueue_script( 'lodash', 'https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js', array(), false, false );
+    // wp_enqueue_script( 'cloudinary_core', get_template_directory_uri() . '/node_modules/cloudinary-core/cloudinary-core.js', array(), '', false );
+    // wp_enqueue_script( 'cloudinary_js', get_template_directory_uri() . '/assets/js/cloudinary.js', array( 'jquery', 'cloudinary_core' ), '', true );
     wp_enqueue_script( 'cd_js', get_template_directory_uri() . '/build/cdr.min.js', array( 'jquery', 'flickity_js' ), '', true );
-    wp_enqueue_script( 'sliders_js', get_template_directory_uri() . '/assets/js/sliders.js', array( 'flickity_js' ), '', true );
 
 
       // wp_enqueue_script( 'app_form_js', get_template_directory_uri() . '/assets/js/application-form.js', array(), null, true);

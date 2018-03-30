@@ -31,11 +31,21 @@
         display: none;
       }
     }
+
+    .gfield_checkbox {
+      list-style: none;
+      padding: 0;
+      input {
+        vertical-align: middle;
+        width: auto;
+      }
+    }
     input, textarea {
       background: transparent;
       color: white;
       height: 40px;
       width: 100%;
+
       font-size: 1.4rem;
       border: 1px solid white;
       border-radius: 2px;

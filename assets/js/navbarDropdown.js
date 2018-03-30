@@ -6,56 +6,57 @@ module.exports = () => {
     // Put the Imperius Curse on the menu on document ready so we can bend it to our will later.
 
     // Get all menu items with sub menu items.
-    var menuParents = document.querySelectorAll('.menu-item-has-children'); // querySelectorAll has support back to ie9
+    const menuParents = document.querySelectorAll('.menu-item-has-children'); // querySelectorAll has support back to ie9
 
     // Iterate over those menu items with child sub menus with an index.
-    var i = 0;
-    for (var parent of menuParents) {
+    let i = 0;
+    menuParents.forEach((parent) => {
       // Each 'parent' here is a primary <li> with class .menu-item-has-children
       //    The <li> 'parent' will have 2 children
       //    at index[0], the <a> link to the parent page
       //    at index[1], a <ul> with class .sub-menu containing the child menu
       //
       // Add the caret to the <a> element html inside the <li>
-      parent.children[0].innerHTML += ' <i id=subMenuCaret' + i + ' class="fa fa-caret-right"></i>';
+      const childLink = parent.querySelector('a');
+      const childMenu = parent.querySelector('ul');
+      childLink.innerHTML += ' <i id=subMenuCaret' + i + ' class="fa fa-caret-right"></i>';
       // Add class 'parent' to the <li> item
       parent.classList.add('parent');
       // Add data-child attribute to the <li> item to target the correct sub-menu
       parent.setAttribute('data-child', 'sub_menu_' + i);
       // Add an id to the child <ul> sub-menu matching the data-child attr of the parent.
-      parent.children[1].setAttribute('id', 'sub_menu_' + i);
+      childMenu.setAttribute('id', 'sub_menu_' + i);
       // Get the natural height of the element and store as a data attr for later.
-      var subMenu = document.getElementById('sub_menu_' + i);
-      var height = window.getComputedStyle(subMenu)['height'];
+      // var subMenu = document.getElementById('sub_menu_' + i);
+      const height = window.getComputedStyle(childMenu)['height'];
       // var caret = document.getElementById('subMenuCaret' + i);
-      subMenu.setAttribute('data-height', height);
+      childMenu.setAttribute('data-height', height);
       // collapse menu only if we're mobile.
       if (document.documentElement.clientWidth < 768) {
-        subMenu.style.height = 0;
-        subMenu.style.opacity = 0;
-        subMenu.style.display = 'none';
-        parent.children[0].setAttribute('data-index', i);
-        parent.children[0].addEventListener('click', function(event) {
-          event.preventDefault();
-          var index = this.getAttribute('data-index');
-          console.log(index);
-          var caret = document.getElementById('subMenuCaret' + index);
-          thisSubMenu = document.getElementById('sub_menu_' + index);
-          if ( thisSubMenu.classList.contains('open') ) {
-            thisSubMenu.classList.remove('open');
-            thisSubMenu.style.height = 0;
-            thisSubMenu.style.opacity = 0;
+        childMenu.style.height = 0;
+        childMenu.style.opacity = 0;
+        childMenu.style.display = 'none';
+        childLink.setAttribute('data-index', i);
+        childLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          const index = this.getAttribute('data-index');
+          
+          const caret = childLink.querySelector('i');
+          if ( childMenu.classList.contains('open') ) {
+            childMenu.classList.remove('open');
+            childMenu.style.height = 0;
+            childMenu.style.opacity = 0;
             caret.style.transform = 'rotate(0)';
             setTimeout(function() {
-              thisSubMenu.style.display = 'none';
+              childMenu.style.display = 'none';
             },250);
           } else {
-            thisSubMenu.classList.add('open');
-            thisSubMenu.style.display = 'block';
+            childMenu.classList.add('open');
+            childMenu.style.display = 'block';
             caret.style.transform = 'rotate(90deg)';
             setTimeout(function() {
-              thisSubMenu.style.height = thisSubMenu.getAttribute('data-height');
-              thisSubMenu.style.opacity = 1;
+              childMenu.style.height = childMenu.getAttribute('data-height');
+              childMenu.style.opacity = 1;
             },0);
           }
         });
@@ -64,7 +65,7 @@ module.exports = () => {
 
       i++;
       // Mischief managed
-    }
+    });
 
 
     // Time to do some magic on those sub-menus
