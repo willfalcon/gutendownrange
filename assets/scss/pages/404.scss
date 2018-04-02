@@ -1,0 +1,25 @@
+.error404 {
+  .regular-content__title {
+    .text {
+      img {
+        width: 100px;
+      }
+      font-size: 10rem;
+      color: $green-menu;
+      span {
+        &:first-child {
+          margin-right: .5rem;
+        }
+        &:last-child {
+          margin-left: .5rem;
+        }
+      }
+    }
+    .line {
+      background-color: $green-menu;
+    }
+  }
+  .regular-content__content {
+    text-align: center;
+  }
+}

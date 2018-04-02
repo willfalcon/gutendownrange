@@ -67,6 +67,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           alert.style.height = getComputedStyle(alertMessage).height;
           alert.style.marginBottom = '10px';
           alert.style.padding = '1rem';
+        } else {
+          alert.style.position = 'absolute';
+          alert.style.transform = 'translateY(-100%)';
         }
       }
 

@@ -76,6 +76,31 @@ body {
           flex-direction: column;
   min-height: 100vh;
 }
+body.admin-bar {
+  min-height: calc(100vh - 46px);
+}
+@media (min-width: 768px) {
+  body.admin-bar {
+    min-height: calc(100vh - 32px);
+  }
+}
+body .container-fluid {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body .container-fluid > *:not(footer) {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
 
 .cdr-navbar {
   background-position: top left;
@@ -945,7 +970,7 @@ a:focus, button:focus, input:focus {
   margin: 0 -15px;
 }
 .slider .slide {
-  height: 450px;
+  min-height: 100%;
   width: 100%;
   padding: 3rem 4rem;
   display: -webkit-box;
@@ -1094,6 +1119,7 @@ a:focus, button:focus, input:focus {
 }
 .image-slider__image {
   height: 450px;
+  min-height: 100%;
   width: 100%;
   position: relative;
 }
@@ -1979,6 +2005,26 @@ a:focus, button:focus, input:focus {
 }
 .contact-page .contact-box .gform_button:hover {
   border-color: #97AA3A;
+}
+
+.error404 .regular-content__title .text, .error404 .regular-content__title--color-white .text {
+  font-size: 10rem;
+  color: #6F7832;
+}
+.error404 .regular-content__title .text img, .error404 .regular-content__title--color-white .text img {
+  width: 100px;
+}
+.error404 .regular-content__title .text span:first-child, .error404 .regular-content__title--color-white .text span:first-child {
+  margin-right: .5rem;
+}
+.error404 .regular-content__title .text span:last-child, .error404 .regular-content__title--color-white .text span:last-child {
+  margin-left: .5rem;
+}
+.error404 .regular-content__title .line, .error404 .regular-content__title--color-white .line {
+  background-color: #6F7832;
+}
+.error404 .regular-content__content, .error404 .regular-content__content--color-white *, .regular-content__content--color-white .error404 *, .error404 .regular-content__content--2-cols, .error404 .regular-content__content--3-cols, .error404 .regular-content__content--4-cols {
+  text-align: center;
 }
 
 .slide-down p {

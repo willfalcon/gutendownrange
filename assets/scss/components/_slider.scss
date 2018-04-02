@@ -3,7 +3,8 @@
   margin: 0 -15px;
   .slide {
     // @include background-image;
-    height: 450px;
+    // height: 450px;
+    min-height: 100%;
     width: 100%;
     padding: 3rem 4rem;
     display: flex;

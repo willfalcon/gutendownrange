@@ -2,4 +2,18 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  &.admin-bar {
+    min-height: calc(100vh - 46px);
+    @include responsive {
+      min-height: calc(100vh - 32px);
+    }
+  }
+  .container-fluid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    > *:not(footer) {
+      flex: 1;
+    }
+  }
 }
