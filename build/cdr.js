@@ -82,17 +82,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         alert.style.padding = '0rem';
       }
       var alertClose = document.querySelector('.alert__dismiss');
-      var alertButton = document.querySelector('.alert__button');
+      // const alertButton = document.querySelector('.alert__button');
 
       if (alertClose) {
         alertClose.addEventListener('click', function () {
           var alert = alertClose.parentNode;
           hideAlert(alert);
-          setCookie('alertClosed', 'true', 24);
-        });
-      }
-      if (alertButton) {
-        alertButton.addEventListener('click', function () {
           setCookie('alertClosed', 'true', 24);
         });
       }

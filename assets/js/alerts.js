@@ -63,7 +63,7 @@ module.exports = () => {
     alert.style.padding = '0rem';
   }
   const alertClose = document.querySelector('.alert__dismiss');
-  const alertButton = document.querySelector('.alert__button');
+  // const alertButton = document.querySelector('.alert__button');
 
   if (alertClose) {
     alertClose.addEventListener('click', () => {
@@ -72,11 +72,7 @@ module.exports = () => {
       setCookie('alertClosed', 'true', 24);
     });
   }
-  if (alertButton) {
-    alertButton.addEventListener('click', () => {
-      setCookie('alertClosed', 'true', 24);
-    });
-  }
+
 
   // ALERT BAR FUNCTIONALITY //
   if (document.querySelector('.alert')) {
