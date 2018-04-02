@@ -10,6 +10,9 @@
   margin: 0 auto 1rem;
   transition: all .25s;
 
+  box-sizing: content-box;
+  min-height: 55px;
+
   background-color: $green;
   @include texture;
 

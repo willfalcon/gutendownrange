@@ -14,7 +14,7 @@
 
     <?php if ( $now >= $start && $now <= $end) : ?>
 
-      <div class="alert" style="height: 0px; padding: 0px; border: 0px;">
+      <div class="alert" style="min-height: 0px; height: 0px; padding: 0px; border: 0px;">
 
         <p class="alert__message"><?php the_sub_field( 'message' ); ?></p>
 

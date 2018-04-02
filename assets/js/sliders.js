@@ -1,3 +1,5 @@
+// const Flickity = require('flickity');
+
 module.exports = () => {
 
   const imgSliders = document.querySelectorAll('.image-slider');

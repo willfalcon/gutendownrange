@@ -21,6 +21,7 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "cloudinary-core": "^2.5.0"
+    "cloudinary-core": "^2.5.0",
+    "flickity": "^2.1.1"
   }
 }

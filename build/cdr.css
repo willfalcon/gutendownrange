@@ -1642,6 +1642,9 @@ a:focus, button:focus, input:focus {
   margin: 0 auto 1rem;
   -webkit-transition: all .25s;
   transition: all .25s;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  min-height: 55px;
   background-color: #478E41;
   background-position: top left;
   background-size: auto;
