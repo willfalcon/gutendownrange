@@ -84,6 +84,11 @@
     add_filter( 'excerpt_more', 'cd_excerpt_more' );
 
 
+  	function cd_excerpt_length( $length ) {
+  		return 30;
+  	}
+  	add_filter( 'excerpt_length', 'cd_excerpt_length', 999 );
+
     // $site_options = array(
     //   'page_title' => 'Site Options'
     // );

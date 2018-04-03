@@ -2,7 +2,7 @@
   $cols = get_sub_field( 'columns' );
 ?>
 
-<div class="regular-content"<?php if ( get_sub_field( 'regular_content_background_color' ) ) : ?> style="background-color: <?php the_sub_field( 'regular_content_background_color' ); ?>"<?php endif; ?>>
+<section class="regular-content"<?php if ( get_sub_field( 'regular_content_background_color' ) ) : ?> style="background-color: <?php the_sub_field( 'regular_content_background_color' ); ?>"<?php endif; ?>>
 
   <?php if ( get_sub_field( 'title' ) ) : ?>
     <h2 class="regular-content__title<?php if ( get_sub_field( 'regular_content_background_color' ) ) : ?>--color-white<?php endif; ?>">
@@ -39,4 +39,4 @@
       <?php the_sub_field( 'content' ); ?>
     </div>
   <?php endif; ?>
-</div>
+</section>

@@ -31,6 +31,7 @@
   }
 
   @media (min-width: $break) {
+    max-width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;

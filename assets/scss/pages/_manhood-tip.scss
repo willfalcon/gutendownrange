@@ -1,0 +1,30 @@
+.article-wrap.manhood {
+  .article {
+    background-color: rgba($green-light, .2);
+    border: 0;
+    padding: 1.8rem;
+    &__title {
+      text-align: center;
+      @include font-main;
+      font-size: 2.6rem;
+      color: $green;
+      text-transform: uppercase;
+      padding: 1rem;
+    }
+    &__image {
+      height: auto;
+      img {
+        width: 100px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    &__excerpt {
+      p {
+        @include font-main;
+        text-align: center;
+      }
+    }
+  }
+}

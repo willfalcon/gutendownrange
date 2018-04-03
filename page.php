@@ -1,17 +1,21 @@
-<?php
+<?php get_header(); ?>
 
-  get_header();
+<main <?php post_class(); ?>>
 
-  if ( have_posts() ) : while ( have_posts() ) : the_post();
+  <?php
 
-    if ( have_rows( 'page_content' ) ) : while ( have_rows( 'page_content' ) ) : the_row();
+    if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-      get_template_part( 'template-parts/' . get_row_layout() );
+      if ( have_rows( 'page_content' ) ) : while ( have_rows( 'page_content' ) ) : the_row();
+
+        get_template_part( 'template-parts/' . get_row_layout() );
+
+      endwhile; endif;
 
     endwhile; endif;
 
-  endwhile; endif;
+  ?>
 
-  get_footer();
+</main>
 
-?>
+<?php get_footer(); ?>

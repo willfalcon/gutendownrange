@@ -7,6 +7,12 @@
   @content;
 }
 
+@mixin font-arial($font-weight: normal) {
+  font-family: Arial, sans-serif;
+  font-weight: $font-weight;
+  @content;
+}
+
 @mixin background-image($position: center, $size: cover, $repeat: no-repeat) {
   background-position: $position;
   background-size: $size;
@@ -19,7 +25,7 @@
     background-image: url('../assets/img/texture.svg');
   }
 }
- 
+
 @mixin responsive($breakpoint: $break) {
   @media (min-width: $breakpoint) {
     @content;

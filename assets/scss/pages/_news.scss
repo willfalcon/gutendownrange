@@ -1,0 +1,157 @@
+@import 'manhood-tip';
+
+.blog, .archive {
+  .container-fluid {
+    @include texture;
+  }
+}
+
+.news-page {
+  display: flex;
+  flex-flow: row wrap;
+  .page-title {
+    flex: 0 0 100%;
+    order: 1;
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+  }
+  .news-feed {
+    flex: 0 0 100%;
+    max-width: 100%;
+    order: 2;
+  }
+  .news-sidebar {
+    flex: 0 0 100%;
+    max-width: 100%;
+    order: 3;
+  }
+  @include responsive {
+    .news-sidebar {
+      flex: 0 0 16.666667%;
+      max-width: 16.666667%;
+      order: 2;
+    }
+    .news-feed {
+      flex: 0 0 83.333333%;
+      max-width: 83.333333%;
+      order: 3;
+    }
+  }
+}
+
+.news-feed {
+
+  display: flex;
+  flex-flow: row wrap;
+
+  .article-wrap {
+    flex: 0 0 100%;
+    max-width: 100%;
+    @include responsive {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    padding: 1rem;
+  }
+
+  .article {
+    height: 100%;
+    border: 1px solid $tan;
+
+    &__image {
+      width: 100%;
+      height: 175px;
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &__title {
+      line-height: 2.6rem;
+      padding: 1rem 1rem 0;
+      margin-bottom: 0;
+      a {
+        @include font-arial(bold);
+        color: $grey;
+        font-size: 1.8rem;
+        margin-top: 1rem;
+      }
+    }
+
+    &__excerpt {
+      padding: 1rem 1rem 0;
+    }
+
+    &__link {
+      @include font-main;
+      text-transform: uppercase;
+      text-decoration: underline;
+      display: block;
+      text-align: center;
+      padding: 1rem;
+    }
+
+  }
+
+}
+
+.pagination {
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+  justify-content: center;
+  .page-numbers {
+    @include font-arial(bold);
+    color: $green;
+    font-size: 1.8rem;
+    border: 1px solid $green;
+    padding: .6rem 1.5rem;
+    margin: 1rem 1rem 2rem;
+    transition: .25s;
+    &.current {
+      background-color: rgba($green, .1);
+    }
+  }
+  a.page-numbers {
+    &:hover {
+      background-color: $green;
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+}
+
+.news-sidebar {
+  padding: 1rem .75rem 0;
+}
+
+.categories {
+  background-color: rgba($tan, .2);
+  padding: .5rem;
+  // @include texture;
+  &__heading {
+    text-align: center;
+    border-bottom: 2px solid $green;
+    padding: .5rem;
+    font-size: 1.8rem;
+  }
+  &__list {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    .category a {
+      @include font-arial(bold);
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      margin-bottom: .75rem;
+      color: $grey;
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+}

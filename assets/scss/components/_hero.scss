@@ -2,7 +2,7 @@
   margin: 0 -15px;
   position: relative;
   height: 400px;
-  img {
+  .hero-image {
     clip-path: url(#heroClip);
     position: absolute;
     top: 0;
@@ -11,9 +11,12 @@
     height: 100%;
     object-fit: cover;
   }
-  svg {
+
+  .hero-bottom {
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
+    height: 100%;
+    width: auto;
     left: 0;
     transform: rotate(180deg);
   }
