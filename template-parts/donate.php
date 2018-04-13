@@ -7,7 +7,7 @@
     <span class="line"></span>
   </h2>
   <div class="donate__button-wrapper">
-    <a class="donate__button" target="_blank" href="https://paypal.me/campdownrange">
+    <a class="donate__button" target="_blank" href="https://www.pushpay.com/pay/campdownrange">
 
       <svg width="180px" height="60px" viewBox="0 0 180 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->

@@ -2,6 +2,8 @@
   margin: 0 -15px;
   position: relative;
   height: 400px;
+  overflow: hidden;
+
   .hero-image {
     clip-path: url(#heroClip);
     position: absolute;
@@ -19,6 +21,10 @@
     width: auto;
     left: 0;
     transform: rotate(180deg);
+    @include responsive(1350px) {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__heading {
@@ -27,6 +33,10 @@
     position: absolute;
     width: 100%;
     top: 50%;
+    margin-top: -25%;
     text-transform: uppercase;
+    @include responsive {
+      margin: 0;
+    }
   }
 }

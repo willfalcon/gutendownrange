@@ -624,6 +624,7 @@ a:focus, button:focus, input:focus {
   margin: 0 -15px;
   position: relative;
   height: 400px;
+  overflow: hidden;
 }
 .hero .hero-image {
   -webkit-clip-path: url(#heroClip);
@@ -645,13 +646,25 @@ a:focus, button:focus, input:focus {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
+@media (min-width: 1350px) {
+  .hero .hero-bottom {
+    width: 100%;
+    height: auto;
+  }
+}
 .hero__heading {
   color: white;
   text-align: center;
   position: absolute;
   width: 100%;
   top: 50%;
+  margin-top: -25%;
   text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .hero__heading {
+    margin: 0;
+  }
 }
 
 .donate {

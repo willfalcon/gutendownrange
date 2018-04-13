@@ -11,7 +11,7 @@
     wp_enqueue_style( 'flickity_css', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
     wp_enqueue_style( 'lightbox_css', get_template_directory_uri() . '/assets/lightbox/css/lightbox.min.css' );
     wp_enqueue_style( 'typekit_css', 'https://use.typekit.net/cny5mzk.css' );
-    wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/build/cdr.min.css' );
+    wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/build/cdr.css' );
   }
 
   function cd_theme_scripts() {
@@ -69,7 +69,7 @@
 
     }
 
-    /* Add .nav-item to li elements in navbar */
+
 
     function cd_excerpt_more( $more ) {
       /**
