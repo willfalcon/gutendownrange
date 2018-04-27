@@ -3,18 +3,20 @@ const gulp = require('gulp');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 
-const sass = require('gulp-ruby-sass');
+const sass = require('gulp-sass');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
 const rename = require('gulp-rename');
-// const concat = require('gulp-concat');
+const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 
 const del = require('del');
 const babel = require('gulp-babel');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
+const streamqueue = require('streamqueue');
+
 
 /*==============================*/
 // CSS TASKS
@@ -24,31 +26,37 @@ const postcss = require('gulp-postcss');
   //  - Just processes sass.
   //  - Includes sourcemaps and doesn't minify.
 gulp.task('dev_styles', () => {
-  return sass('assets/scss/cdr.scss', { sourcemap: true, style: 'expanded' })
-    .pipe(sourcemaps.init())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('build'))
+  return streamqueue(
+    { objectMode: true },
+    gulp.src('assets/scss/cdr.scss')
+      .pipe(sourcemaps.init())
+      .pipe(sass().on('error', sass.logError)),
+  )
+  .pipe(concat('cdr.min.css'))
+  .pipe(sourcemaps.write('.'))
+  .pipe(gulp.dest('build'));
 });
 
   // SASS/CSS PRODUCTION BUILD
 gulp.task('styles', () => {
-    // 1) Preprocess sass, with a sourcemap.
-  return sass('assets/scss/cdr.scss', { sourcemap: true, style: 'expanded' })
-      // 2) Run through postcss, which only includes autoprefixer.
-    .pipe(postcss([
-      autoprefixer({browsers: ['last 2 versions']}),
-    ]))
-    .pipe(sourcemaps.init())
-      // 3) Write sourcemap.
-    // .pipe(sourcemaps.write('.'))
-      // 4) Save to build directory.
-    .pipe(gulp.dest('build'))
-    .pipe(postcss([
-      cssnano(),
-    ]))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('build'))
+  return streamqueue(
+    { objectMode: true },
+    gulp.src('assets/scss/cdr.scss')
+      .pipe(sourcemaps.init())
+      .pipe(sass().on('error', sass.logError)),
+  )
+  .pipe(concat('cdr.css'))
+  .pipe(postcss([
+    autoprefixer({browsers: ['last 2 versions']}),
+  ]))
+  // .pipe(sourcemaps.write('.'))
+  .pipe(gulp.dest('build'))
+  .pipe(postcss([
+    cssnano(),
+  ]))
+  .pipe(rename({suffix: '.min'}))
+  .pipe(sourcemaps.write('.'))
+  .pipe(gulp.dest('build'));
 });
 
 /*==============================*/
@@ -63,7 +71,7 @@ gulp.task('dev_scripts',() => {
   })
     .bundle()
     //Pass desired output filename to vinyl-source-stream
-    .pipe(source('cdr.js'))
+    .pipe(source('cdr.min.js'))
     .pipe(buffer())
     // 2) Start sourcemaps... I think the 'debug: true' above actually starts it?
     .pipe(sourcemaps.init({loadMaps: true}))

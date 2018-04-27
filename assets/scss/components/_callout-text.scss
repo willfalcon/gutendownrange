@@ -1,6 +1,5 @@
 .callout-text {
   margin: 2rem -15px;
-  @include texture;
   &__content {
     @include font-main;
     font-size: 2.6rem;

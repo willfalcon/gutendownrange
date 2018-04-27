@@ -1,0 +1,17 @@
+.table {
+  width: $content-width;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  table {
+    width: 100%;
+  }
+}
+
+.tbcol-0 {
+  width: 300px;
+  max-width: 45vw;
+  // th {
+    font-size: 3rem;
+  // }
+}

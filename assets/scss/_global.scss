@@ -17,3 +17,8 @@ body {
     }
   }
 }
+
+
+main.page {
+  @include texture;
+}

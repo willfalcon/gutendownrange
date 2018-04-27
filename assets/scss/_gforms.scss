@@ -6,29 +6,67 @@
 }
 
 
+.gform_body h3 {
+  color: $grey;
+  font-size: 2.8rem;
+}
+
+.gfield.heading .gfield_label {
+  font-size: 2.8rem;
+  color: $grey;
+  @include font-main;
+  line-height: 1.2;
+  margin-bottom: .5rem;
+  display: block;
+  text-transform: uppercase;
+}
+
 .gform_fields {
   display: flex;
   flex-flow: row wrap;
   list-style: none;
   padding: 0;
   margin: 0;
+
   .gfield {
+
     flex: 0 0 100%;
     max-width: 100%;
-    &.inline-at-md {
+    &.inline-at-md,
+    &.gf_inline {
       @include responsive {
         flex: 0 0 50%;
         max-width: 50%;
       }
     }
+
     .ginput_container {
       padding: 1rem;
       padding-left: 0;
     }
 
-    .ginput_container_name {
-      label {
-        display: none;
+    .ginput_container_fileupload {
+      input {
+        border: 0;
+      }
+    }
+
+    .ginput_complex {
+      display: flex;
+      flex-flow: row wrap;
+      &.ginput_container_name {
+        padding-right: 0;
+        @include responsive {
+          flex-wrap: nowrap;
+        }
+        span {
+          padding-right: 1rem;
+          flex: 1 1 auto;
+          input {
+
+          }
+
+        }
       }
     }
 
@@ -62,7 +100,11 @@
     .gfield_label {
       display: none;
     }
-  }
+
+    canvas, div {
+      max-width: 100%;
+    }
+  } // .gfield
 }
 
 .gform_footer {
@@ -132,6 +174,41 @@
       &:hover {
         color: white;
       }
+    }
+  }
+}
+
+.gfield {
+  margin-top: 1rem;
+}
+
+.ginput_container_address {
+  display: flex;
+  flex-flow: row wrap;
+  span {
+    padding: 0 .5rem;
+    input,
+    select {
+      width: 100%;
+    }
+    select {
+      height: 40px;
+      background: transparent;
+      border: 1px solid $grey;
+      border-radius: 2px;
+    }
+  }
+  .ginput_full {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .ginput_left,
+  .ginput_right {
+    flex: 0 0 100%;
+    max-width: 100%;
+    @include responsive {
+      flex: 0 0 50%;
+      max-width: 50%;
     }
   }
 }

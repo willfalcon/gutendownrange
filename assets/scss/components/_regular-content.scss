@@ -1,7 +1,6 @@
 .regular-content {
   margin: 0 -15px;
   padding: 2rem 1rem;
-  @include texture;
   &__title {
     text-align: center;
 
@@ -31,6 +30,10 @@
         color: white;
       }
     }
+  }
+  &--texture {
+    @extend .regular-content;
+    @include texture;
   }
   &__content {
     width: $content-width;

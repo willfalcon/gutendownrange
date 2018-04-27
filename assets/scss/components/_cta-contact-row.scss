@@ -32,6 +32,8 @@
     color: white;
     text-align: center;
     text-transform: uppercase;
+    max-width: 100%;
+    word-wrap: break-word;
     @include responsive {
       text-align: left;
     }

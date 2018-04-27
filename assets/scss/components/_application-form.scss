@@ -48,8 +48,7 @@
         }
       }
 
-      .name_first,
-      .name_last {
+      span {
         label {
           font-size: 1.4rem;
         }
@@ -80,12 +79,12 @@
         }
       }
 
-
-      .ui-sortable {
-        .gfield_list_icons {
-          display: none;
-        }
-      }
+      //
+      // .ui-sortable {
+      //   .gfield_list_icons {
+      //     display: none;
+      //   }
+      // }
 
       strong {
         color: $green;
