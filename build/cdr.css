@@ -1463,8 +1463,7 @@ a:focus, button:focus, input:focus {
 
 .tbcol-0 {
   width: 300px;
-  max-width: 45vw;
-  font-size: 3rem; }
+  max-width: 45vw; }
 
 .page-title {
   text-align: center; }
