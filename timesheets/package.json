@@ -31,7 +31,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "airtable": "^0.5.4",
     "axios": "^0.18.0",
+    "moment": "^2.22.1",
     "pikaday": "^1.7.0",
     "timepicker": "^1.11.12"
   }

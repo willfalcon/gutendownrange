@@ -13,7 +13,7 @@
       <label>Date</label>
       <input id="timeDate">
     </div>
-    
+
     <div class="time__in">
       <label>Time In</label>
       <input id="timeIn">
@@ -24,6 +24,9 @@
       <input id="timeOut">
     </div>
 
+    <div class="time__submit">
+      <button id="saveTime">Save</button>
+    </div>
   </div>
 
 </div>

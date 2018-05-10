@@ -45,6 +45,10 @@ gulp.task('dev_styles', () => {
 gulp.task('styles', () => {
   return streamqueue(
     { objectMode: true },
+    gulp.src('node_modules/timepicker/jquery.timepicker.css')
+      .pipe(sourcemaps.init()),
+    gulp.src('node_modules/pikaday/css/pikaday.css')
+      .pipe(sourcemaps.init()),
     gulp.src('src/timesheets.scss')
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError)),
