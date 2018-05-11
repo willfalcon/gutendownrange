@@ -11,7 +11,7 @@
 
     <div class="time__date">
       <label>Date</label>
-      <input id="timeDate">
+      <input id="timeDate" disabled>
     </div>
 
     <div class="time__in">
@@ -25,8 +25,13 @@
     </div>
 
     <div class="time__submit">
-      <button id="saveTime">Save</button>
+      <button class="button" id="saveTime">Save</button>
     </div>
+
   </div>
+
+  <div class="cal" id="cal"></div>
+
+  <button class="button" id="saveAllFields">Save All</button>
 
 </div>

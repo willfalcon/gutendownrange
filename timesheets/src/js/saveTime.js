@@ -1,4 +1,3 @@
-
 const convertTime = require('./convertTime');
 const userWelcome = document.getElementById('userWelcome');
 const Airtable = require('airtable');

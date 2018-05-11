@@ -1,35 +1,30 @@
-const axios = require('axios');
-
 const updateCurrentUser = require('./js/updateCurrentUser');
-const saveTime = require('./js/saveTime');
+const Airtable = require('airtable');
+const base = new Airtable({apiKey: 'keySUYSjrGGJlTGCE'}).base('appvpsjOd4ayHeMgI');
 
 const userWelcome = document.getElementById('userWelcome');
+const userSelect = document.getElementById('userSelect');
 
-const employeesEndpoint = 'https://api.airtable.com/v0/appvpsjOd4ayHeMgI/Employees';
-const timesheetsEndpoint = 'https://api.airtable.com/v0/appvpsjOd4ayHeMgI/Time%20Entries';
-const config = {
-  headers: {
-    'Authorization': 'Bearer keySUYSjrGGJlTGCE'
-  },
-}
+base('Employees').select().eachPage(function page(records, fetchNextPage) {
 
-
-axios.get(employeesEndpoint, config).then(response => {
-
-  const employees = response.data.records;
-  console.log(employees);
-  const userSelect = document.getElementById('userSelect');
-  employees.forEach(employee => {
-    const option = document.createElement('OPTION');
-    option.value = employee.id;
-    option.innerText = `${employee.fields["first-name"]} ${employee.fields["last-name"]}`;
-    userSelect.appendChild(option);
+  records.forEach(employee => {
+      // console.log('Retrieved', employee);
+      const option = document.createElement('OPTION');
+      option.value = employee.id;
+      option.innerText = `${employee.get('first-name')} ${employee.get('last-name')}`;
+      userSelect.appendChild(option);
   });
+
+  fetchNextPage();
+
+}, function done(err) {
+
+  if (err) { console.error(err); return; }
+
   userSelect.addEventListener('change', updateCurrentUser);
 
 });
 
 
-const saveTimeButton = document.getElementById('saveTime');
+
 // console.log(saveTimeButton);
-saveTimeButton.addEventListener('click', saveTime);

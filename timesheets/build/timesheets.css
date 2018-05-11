@@ -320,3 +320,7 @@ http://nicolasgallagher.com/micro-clearfix-hack/
 .ui-timepicker-wrapper {
   width: auto;
   padding: .5rem; }
+
+.cal {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); }
