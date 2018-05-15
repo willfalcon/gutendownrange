@@ -1,0 +1,23 @@
+// Colors
+
+$green: #478E41;
+$green-light: #97AA3A;
+$green-dark: #547334;
+$green-menu: #6F7832;
+$grey: #454545;
+$dark: #777777;
+$tan: #BFB089;
+
+$block-background: rgba(lighten(black, 5), .65);
+
+
+
+// Sizes
+
+  //these are based on bootstrap's sm, md, lg, and xl breakpoints
+$break: 768px; // this is the md breakpoint
+$break-sm: 576px;
+$break-lg: 992px;
+$break-xl: 1200px;
+
+$content-width: 800px;

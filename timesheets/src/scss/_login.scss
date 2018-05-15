@@ -1,0 +1,54 @@
+.login-form {
+  width: 695px;
+  max-width: 100%;
+}
+
+#loginform {
+  display: flex;
+  flex-flow: row wrap;
+  width: 300px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  p {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 1rem;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+
+    display: flex;
+    flex-flow: wrap;
+
+    &:not(.login-remember) {
+      label {
+        flex: 0 0 100%;
+        margin: 0;
+      }
+      input:not([type="submit"]) {
+        flex: 0 0 100%;
+        background: transparent;
+        height: 40px;
+        width: 100%;
+        font-size: 1.4rem;
+        border: 1px solid $grey;
+        border-radius: 2px;
+        padding: .7rem 1rem;
+      }
+    }
+
+  }
+  .login-submit {
+    justify-content: center;
+    .button {
+      border-color: $green;
+      color: $green;
+      cursor: pointer;
+      &:hover {
+        background-color: $green;
+        color: white;
+      }
+    }
+  }
+}

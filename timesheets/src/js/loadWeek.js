@@ -1,76 +1,67 @@
 const moment = require('moment');
 const calHeader = require('./calHeader');
 const calRow = require('./calrow');
+const populateFields = require('./populateFields');
 const Airtable = require('airtable');
 const base = new Airtable({apiKey: 'keySUYSjrGGJlTGCE'}).base('appvpsjOd4ayHeMgI');
 
-module.exports = user => {
+module.exports = (user, weekOffset = null) => {
 
   const cal = document.getElementById('cal');
-  cal.innerHTML = calHeader + calRow + calRow + calRow + calRow + calRow + calRow + calRow;
 
-  const daysObj = {
-    0: moment().day(3),
-    1: moment().day(4),
-    2: moment().day(5),
-    3: moment().day(6),
-    4: moment().day(7),
-    5: moment().day(8),
-    6: moment().day(9)
+  const today = moment().day();
+
+  if (weekOffset != 0) {
+    const currentOffset = parseInt(cal.dataset.weekOffset);
+    const newOffset = currentOffset + weekOffset;
+    cal.dataset.weekOffset = newOffset;
+  } else if (weekOffset == 0) {
+    cal.dataset.weekOffset = 0;
+  }
+ 
+  const offset = parseInt(cal.dataset.weekOffset);
+
+  const daysObj = today < 3 ?
+   {
+     0: moment().day((3 - 7) + (7 * offset)),
+     1: moment().day((4 - 7) + (7 * offset)),
+     2: moment().day((5 - 7) + (7 * offset)),
+     3: moment().day((6 - 7) + (7 * offset)),
+     4: moment().day((7 - 7) + (7 * offset)),
+     5: moment().day((8 - 7) + (7 * offset)),
+     6: moment().day((9 - 7) + (7 * offset))
+   } :
+   {
+     0: moment().day(3 + (7 * offset)),
+     1: moment().day(4 + (7 * offset)),
+     2: moment().day(5 + (7 * offset)),
+     3: moment().day(6 + (7 * offset)),
+     4: moment().day(7 + (7 * offset)),
+     5: moment().day(8 + (7 * offset)),
+     6: moment().day(9 + (7 * offset))
+   };
+
+  let dayIterator = 0;
+  let calRows = calHeader;
+
+  for (let i=0; i<7; i++) {
+
+    calRows += calRow(daysObj[i]);
+
   }
 
-  const dateFields = document.querySelectorAll('.rowDate input');
-  let dayIterator = 0;
-  dateFields.forEach(input => {
-    // console.log(daysObj[dayIterator]);
-    // console.log(moment.isMoment(daysObj[dayIterator]));
-    input.value = daysObj[dayIterator].format('dddd MMMM Do');
-    input.dataset.date = daysObj[dayIterator].format('YYYY-MM-DD');
-    dayIterator++;
-  });
 
-  const inFields = document.querySelectorAll('.calIn');
-  let inIterator = 0;
-  inFields.forEach(input =>{
-    input.dataset.for = daysObj[inIterator].format('YYYY-MM-DD');
-    inIterator++;
-  });
-
-  const outFields = document.querySelectorAll('.calOut');
-  let outIterator = 0;
-  outFields.forEach(input => {
-    input.dataset.for = daysObj[outIterator].format('YYYY-MM-DD');
-    outIterator++;
-  });
+  cal.innerHTML = calRows;
 
   base('Time Entries').select({
     filterByFormula: `{Employee} = "${user.get('last-name')}"`
-  }).eachPage(function page(records, fetchNextPage) {
+  }).eachPage((records, fetchNextPage) => {
 
-    records.forEach(function(entry) {
-
-      if (entry.get('Employee')[0] = user.id) {
-        const entryDate = entry.get('Entry Date');
-        console.log(entryDate);
-        const inForEntry = document.querySelector(`.calIn[data-for='${entryDate}']`);
-        const outForEntry = document.querySelector(`.calOut[data-for='${entryDate}']`);
-        console.log('in: ', inForEntry);
-        console.log('out: ', outForEntry);
-        if (inForEntry) {
-          const inTime = moment(entry.get('Time In'));
-          inForEntry.value = inTime.format('h:mma');
-        }
-        if (outForEntry) {
-          const outTime = moment(entry.get('Time Out'));
-          outForEntry.value = outTime.format('h:mma');
-        }
-      }
-
-    });
+    records.forEach(entry => populateFields(entry, user));
 
     fetchNextPage();
 
-  }, function done(err) {
+  }, err => {
     if (err) { console.error(err); return; }
   });
 

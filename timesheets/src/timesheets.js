@@ -1,30 +1,12 @@
 const updateCurrentUser = require('./js/updateCurrentUser');
-const Airtable = require('airtable');
-const base = new Airtable({apiKey: 'keySUYSjrGGJlTGCE'}).base('appvpsjOd4ayHeMgI');
 
-const userWelcome = document.getElementById('userWelcome');
-const userSelect = document.getElementById('userSelect');
+// Record ID corresponding to logged-in employee is stored in data attr
+// on user welcome element.
+const currentUser = document.querySelector('.user[data-user]').dataset.user;
 
-base('Employees').select().eachPage(function page(records, fetchNextPage) {
-
-  records.forEach(employee => {
-      // console.log('Retrieved', employee);
-      const option = document.createElement('OPTION');
-      option.value = employee.id;
-      option.innerText = `${employee.get('first-name')} ${employee.get('last-name')}`;
-      userSelect.appendChild(option);
-  });
-
-  fetchNextPage();
-
-}, function done(err) {
-
-  if (err) { console.error(err); return; }
-
-  userSelect.addEventListener('change', updateCurrentUser);
-
-});
-
-
-
-// console.log(saveTimeButton);
+// If Record ID is found, run updateCurrentUser, which
+// Loads timesheet fields for the current week and gets all the existing Entries
+// to prepopulate the timesheet.
+if (currentUser) {
+  updateCurrentUser(currentUser);
+}

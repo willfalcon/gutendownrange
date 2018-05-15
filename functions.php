@@ -229,3 +229,54 @@
 
     // Disables tabindex attribute on all forms.
     add_filter( 'gform_tabindex', '__return_false' );
+
+    function acf_load_employees( $field ) {
+
+        // reset choices
+        $field['choices'] = array();
+
+        //
+        // // if has rows
+        // if( have_rows('my_select_values', 'option') ) {
+        //
+        //     // while has rows
+        //     while( have_rows('my_select_values', 'option') ) {
+        //
+        //         // instantiate row
+        //         the_row();
+        //
+        //
+        //         // vars
+        //         $value = get_sub_field('value');
+        //         $label = get_sub_field('label');
+        //
+        //
+        //         // append to choices
+        //         $field['choices'][ $value ] = $label;
+        //
+        //     }
+        //
+        // }
+
+        $url = 'https://api.airtable.com/v0/appvpsjOd4ayHeMgI/Employees?api_key=keySUYSjrGGJlTGCE';
+
+        //Use file_get_contents to GET the URL in question.
+        $contents = file_get_contents($url);
+
+        $contents = json_decode($contents, TRUE);
+        //If $contents is not a boolean FALSE value.
+        if($contents !== false){
+            //Print out the contents.
+            foreach ($contents['records'] as $record) {
+              $field['choices'][$record['id']] = $record['fields']['first-name'] . ' ' . $record['fields']['last-name'];
+            }
+
+        }
+
+
+        // return the field
+        return $field;
+
+    }
+
+    add_filter('acf/load_field/name=employee', 'acf_load_employees');
