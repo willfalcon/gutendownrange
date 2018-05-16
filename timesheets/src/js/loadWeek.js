@@ -1,3 +1,4 @@
+const $ = require('jquery');
 const moment = require('moment');
 const calHeader = require('./calHeader');
 const calRow = require('./calrow');
@@ -18,7 +19,7 @@ module.exports = (user, weekOffset = null) => {
   } else if (weekOffset == 0) {
     cal.dataset.weekOffset = 0;
   }
- 
+
   const offset = parseInt(cal.dataset.weekOffset);
 
   const daysObj = today < 3 ?
@@ -63,6 +64,16 @@ module.exports = (user, weekOffset = null) => {
 
   }, err => {
     if (err) { console.error(err); return; }
+  });
+
+  // Initialize timepickers
+  $('.calIn').timepicker({
+    scrollDefault: 'now',
+    step: 15
+  });
+  $('.calOut').timepicker({
+    scrollDefault: 'now',
+    step: 15
   });
 
 }

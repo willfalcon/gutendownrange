@@ -4,8 +4,8 @@ const updateCurrentUser = require('./js/updateCurrentUser');
 // on user welcome element.
 const currentUser = document.querySelector('.user[data-user]').dataset.user;
 
-// If Record ID is found, run updateCurrentUser, which
-// Loads timesheet fields for the current week and gets all the existing Entries
+// If Record ID is found, run updateCurrentUser, which loads
+// timesheet fields for the current week and gets all the existing Entries
 // to prepopulate the timesheet.
 if (currentUser) {
   updateCurrentUser(currentUser);

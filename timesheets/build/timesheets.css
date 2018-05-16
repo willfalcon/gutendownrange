@@ -323,4 +323,75 @@ http://nicolasgallagher.com/micro-clearfix-hack/
 
 .cal {
   display: grid;
-  grid-template-columns: repeat(8, 1fr); }
+  grid-template-columns: repeat(9, 1fr); }
+
+.cal-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 5rem; }
+  .cal-controls .button.small {
+    font-size: 1.5rem;
+    padding: .75rem 1.5rem;
+    text-transform: none; }
+
+.login-form {
+  width: 695px;
+  max-width: 100%; }
+
+#loginform {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 300px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  #loginform p {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 1rem;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap; }
+    #loginform p:not(.login-remember) label {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 100%;
+              flex: 0 0 100%;
+      margin: 0; }
+    #loginform p:not(.login-remember) input:not([type="submit"]) {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 100%;
+              flex: 0 0 100%;
+      background: transparent;
+      height: 40px;
+      width: 100%;
+      font-size: 1.4rem;
+      border: 1px solid #454545;
+      border-radius: 2px;
+      padding: .7rem 1rem; }
+  #loginform .login-submit {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    #loginform .login-submit .button {
+      border-color: #478E41;
+      color: #478E41;
+      cursor: pointer; }
+      #loginform .login-submit .button:hover {
+        background-color: #478E41;
+        color: white; }

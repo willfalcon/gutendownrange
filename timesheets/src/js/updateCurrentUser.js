@@ -1,4 +1,3 @@
-const $ = require('jquery');
 const timepicker = require('timepicker');
 const moment = require('moment');
 const Airtable = require('airtable');
@@ -27,15 +26,7 @@ module.exports = userId => {
     loadWeek(user);
 
     console.log(user);
-    // Initialize timepickers
-    $('.calIn').timepicker({
-      scrollDefault: 'now',
-      step: 15
-    });
-    $('.calOut').timepicker({
-      scrollDefault: 'now',
-      step: 15
-    });
+
 
     // Attach event listener to save time button.
     const saveAllButton = document.getElementById('saveAllFields');

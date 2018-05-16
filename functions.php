@@ -27,7 +27,6 @@
     wp_enqueue_script( 'cd_js', get_template_directory_uri() . '/build/cdr.min.js', array( 'jquery', 'flickity_js' ), '', true );
 
     if ( is_page( 'timesheets' ) ) {
-      // wp_enqueue_script( 'timepicker_js', get_template_directory_uri() . '/timesheets/timepicker/jquery.timepicker.min.js', array( 'jquery' ), '', true );
       wp_enqueue_script( 'timesheets_js', get_template_directory_uri() . '/timesheets/build/timesheets.min.js', array(), '', true );
     }
 
@@ -268,7 +267,9 @@
         if($contents !== false){
             //Print out the contents.
             foreach ($contents['records'] as $record) {
-              $field['choices'][$record['id']] = $record['fields']['first-name'] . ' ' . $record['fields']['last-name'];
+              if (!empty($record['fields']['first-name']) && !empty($record['fields']['last-name'])) {
+                $field['choices'][$record['id']] = $record['fields']['first-name'] . ' ' . $record['fields']['last-name'];
+              }
             }
 
         }
