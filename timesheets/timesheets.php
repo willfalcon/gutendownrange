@@ -6,15 +6,30 @@
       <h4 id="userWelcome" style="display: none;"></h4>
     </div>
 
-    <div class="cal-controls" data-week="0">
-      <button class="button small" id="prevWeek">< Previous Week</button>
-      <button class="button small" id="thisWeek">This Week</button>
-      <button class="button small" id="nextWeek">Next Week ></button>
+    <div class="timesheet-wrap">
+
+    <?php if (current_user_can('administrator')) : ?>
+
+      <div class="admin-sidebar">
+        <h4>Admin</h4>
+        <a class="sidebar-employees" id="adminEmployeeLink">Employees</a>
+      </div>
+
+    <?php endif; ?>
+
+    <div class="timesheet-main">
+
+      <div class="cal-controls" data-week="0">
+        <button class="button small" id="prevWeek">< Previous Week</button>
+        <button class="button small" id="thisWeek">This Week</button>
+        <button class="button small" id="nextWeek">Next Week ></button>
+      </div>
+
+      <div class="cal" id="cal" data-week-offset="0"></div>
+
+      <button class="button" id="saveAllFields">Save All</button>
     </div>
-
-    <div class="cal" id="cal" data-week-offset="0"></div>
-
-    <button class="button" id="saveAllFields">Save All</button>
+  </div>
 
   <?php else: ?>
 
@@ -26,5 +41,6 @@
     </div>
 
 <?php endif; ?>
+
 
 </div>

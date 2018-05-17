@@ -1,0 +1,16 @@
+.timesheets {
+
+  .timesheet-wrap {
+      display: flex;
+      max-width: 100%;
+
+    .admin-sidebar {
+      flex: auto;
+      padding: 1rem;
+    }
+
+    .timesheet-main {
+      flex: auto;
+    }
+  }
+}
