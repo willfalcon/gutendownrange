@@ -536,6 +536,12 @@ a:focus, button:focus, input:focus {
   position: relative;
   height: 400px;
   overflow: hidden; }
+  @media (min-width: 1000px) {
+    .hero {
+      height: 450px; } }
+  @media (min-width: 1200px) {
+    .hero {
+      height: 500px; } }
   .hero .hero-image {
     -webkit-clip-path: url(#heroClip);
             clip-path: url(#heroClip);
@@ -546,6 +552,18 @@ a:focus, button:focus, input:focus {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover; }
+    .hero .hero-image.align-top {
+      -o-object-position: top;
+         object-position: top; }
+    .hero .hero-image.align-right {
+      -o-object-position: right;
+         object-position: right; }
+    .hero .hero-image.align-left {
+      -o-object-position: left;
+         object-position: left; }
+    .hero .hero-image.align-bottom {
+      -o-object-position: bottom;
+         object-position: bottom; }
   .hero .hero-bottom {
     position: absolute;
     bottom: -2px;

@@ -7,7 +7,7 @@
     <h2 class="regular-content__title">
       <span class="line"></span>
       <span class="text">
-        <?php the_title(); ?>
+        Weekly Timesheets
       </span>
       <span class="line"></span>
     </h2>

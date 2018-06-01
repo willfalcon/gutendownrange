@@ -12,9 +12,9 @@
     wp_enqueue_style( 'lightbox_css', get_template_directory_uri() . '/assets/lightbox/css/lightbox.min.css' );
     wp_enqueue_style( 'typekit_css', 'https://use.typekit.net/cny5mzk.css' );
     wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/build/cdr.min.css' );
-    if ( is_page( 'timesheets' ) ) {
-      wp_enqueue_style( 'timesheets_css', get_template_directory_uri() . '/timesheets/build/timesheets.min.css' );
-    }
+    // if ( is_page( 'timesheets' ) ) {
+    //   wp_enqueue_style( 'timesheets_css', get_template_directory_uri() . '/react-timesheets/build/timesheets.css' );
+    // }
   }
 
   function cd_theme_scripts() {
@@ -25,12 +25,35 @@
     wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/965f271379.js' );
 
     wp_enqueue_script( 'cd_js', get_template_directory_uri() . '/build/cdr.min.js', array( 'jquery', 'flickity_js' ), '', true );
-
-    if ( is_page( 'timesheets' ) ) {
-      wp_enqueue_script( 'timesheets_js', get_template_directory_uri() . '/timesheets/build/timesheets.min.js', array(), '', true );
+    global $post;
+    if ( is_page( 'timesheets' ) || $post->post_parent == '436' ) {
+      wp_enqueue_script( 'timesheets_js', get_template_directory_uri() . '/react-timesheets/build/bundle.js', array(), '', true );
     }
 
   }
+
+  // function switch_page_template() {
+  //   global $post;
+  //   // Checks if current post type is a page, rather than a post
+  // 	if (is_page())
+  // 	{
+  // 		// Checks if page is parent, if yes, return
+  // 		if ($post->post_parent == 0)
+  // 			return true;
+  // 		else if ($post->post_parent != $post->ID)
+  // 		{
+  // 			$parent_page_template = get_post_meta($post->post_parent,'_wp_page_template',true);
+  //
+  // 			$template = TEMPLATEPATH . "/{$parent_page_template}";
+  // 			if (file_exists($template)) {
+  // 				load_template($template);
+  // 				exit;
+  // 			}
+  // 		}
+  // 	}
+  // }
+  //
+  // add_action('template_redirect','switch_page_template');
 
   /* Add Theme Supports */
     add_theme_support( 'menus' );
